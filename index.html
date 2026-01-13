@@ -46,7 +46,7 @@ hr{border:none;border-top:1px solid var(--bd);margin:12px 0;}
 <header>
   <div class="wrap">
     <div class="top">
-      <div class="brand">KT 단말기 컨설팅 – 엑셀(지원금요약/무선단가표) 연동</div>
+      <div class="brand">KT 단말기 컨설팅</div>
       <div class="controls">
         <select id="joinType">
           <option value="change">기기변경</option>
@@ -81,11 +81,10 @@ hr{border:none;border-top:1px solid var(--bd);margin:12px 0;}
 <main class="wrap">
   <div id="grid" class="grid"></div>
   <footer>
-    ※ 공시지원금: <b>정책.xlsx → 지원금요약</b> 요금제 구간(37/61/90/110) 선택에 따라 자동 반영<br/>
-    ※ MOU 지원: <b>정책.xlsx → 무선단가표</b> (요금제 구간 + 가입유형) 기준 자동 반영<br/>
-    ※ 선약(요금할인 25%) 선택 시 공시지원금은 <b>적용/표시되지 않습니다</b>.<br/>
-    ※ 할부이자: 연 5.9%, 원리금균등 상환(PMT) 기준(예상).<br/>
-    ※ 이미지: <b>img/variantId.png</b> (예: img/ip17p_1t.png)
+    ※ 공시지원금 : <b>선택하신 요금제에 따란 변동</b> 요금제 구간(37/61/90/110) 선택<br/>
+    ※ 특판가 : <b>프랜차이즈 및 법인 특가</b> (요금제 구간 + 가입유형) 기준 자동 반영<br/>
+    ※ 선택약정(요금할인 25%) 선택 시 공시지원금은 <b>적용/표시되지 않습니다</b>.<br/>
+    ※ 할부이자: 연 5.9%, 원리금균등 상환 기준(예상).<br/>
   </footer>
 </main>
 
@@ -98,17 +97,17 @@ hr{border:none;border-top:1px solid var(--bd);margin:12px 0;}
     <hr/>
     <div class="big" id="mTotal"></div>
     <div class="actions">
-      <a class="btn primary" href="#" onclick="alert('상담 신청 링크(구글폼/카톡채널)로 연결하시면 됩니다.'); return false;">상담 신청</a>
-      <a class="btn" href="tel:010-0000-0000">전화상담</a>
+      <a class="btn primary" href="https://kt-mns.com/" target="_blank">상담 신청</a>
+      <a class="btn" href="tel:010-8871-3121">전화상담</a>
       <button class="btn" onclick="closeModal()">닫기</button>
     </div>
   </div>
 </div>
 
 <script>
-const DEVICES = [{"groupId": "ip17", "name": "iPhone 17", "cat": "애플", "tab": "apple", "variants": [{"id": "ip17_256", "cap": "256GB", "modelCode": "AIP17-256", "msrp": 1287000, "mouCode": "AIP17(P,PM)"}, {"id": "ip17_512", "cap": "512GB", "modelCode": "AIP17-512", "msrp": 1584000, "mouCode": "AIP17(P,PM)"}]}, {"groupId": "ip17p", "name": "iPhone 17 Pro", "cat": "애플", "tab": "apple", "variants": [{"id": "ip17p_256", "cap": "256GB", "modelCode": "AIP17P-256", "msrp": 1782000, "mouCode": "AIP17(P,PM)"}, {"id": "ip17p_512", "cap": "512GB", "modelCode": "AIP17P-512", "msrp": 2090000, "mouCode": "AIP17(P,PM)"}, {"id": "ip17p_1t", "cap": "1TB", "modelCode": "AIP17P-1T", "msrp": 2387000, "mouCode": "AIP17(P,PM)"}]}, {"groupId": "ip17pm", "name": "iPhone 17 Pro Max", "cat": "애플", "tab": "apple", "variants": [{"id": "ip17pm_256", "cap": "256GB", "modelCode": "AIP17PM-256", "msrp": 1980000, "mouCode": "AIP17(P,PM)"}, {"id": "ip17pm_512", "cap": "512GB", "modelCode": "AIP17PM-512", "msrp": 2288000, "mouCode": "AIP17(P,PM)"}, {"id": "ip17pm_1t", "cap": "1TB", "modelCode": "AIP17PM-1T", "msrp": 2585000, "mouCode": "AIP17(P,PM)"}]}, {"groupId": "ipair", "name": "iPhone Air", "cat": "애플", "tab": "apple", "variants": [{"id": "ipair_256", "cap": "256GB", "modelCode": "AIPA-256", "msrp": 1584000, "mouCode": "AIPA"}, {"id": "ipair_512", "cap": "512GB", "modelCode": "AIPA-512", "msrp": 1881000, "mouCode": "AIPA"}, {"id": "ipair_1t", "cap": "1TB", "modelCode": "AIPA-1T", "msrp": 2189000, "mouCode": "AIPA"}]}, {"groupId": "fold7", "name": "Galaxy Z Fold7", "cat": "폴더블", "tab": "foldable", "variants": [{"id": "fold7_256", "cap": "256GB", "modelCode": "SM-F966NK", "msrp": 2379300, "mouCode": "SM-F966NK"}, {"id": "fold7_512", "cap": "512GB", "modelCode": "SM-F966NK512", "msrp": 2537700, "mouCode": "SM-F966NK"}]}, {"groupId": "flip7", "name": "Galaxy Z Flip7", "cat": "폴더블", "tab": "foldable", "variants": [{"id": "flip7_256", "cap": "256GB", "modelCode": "SM-F766NK", "msrp": 1485000, "mouCode": "SM-F766NK(O)"}, {"id": "flip7_512", "cap": "512GB", "modelCode": "SM-F766NK512", "msrp": 1643400, "mouCode": "SM-F766NK(O)512G"}]}, {"groupId": "s25", "name": "Galaxy S25", "cat": "삼성 S", "tab": "sseries", "variants": [{"id": "s25_256", "cap": "256GB", "modelCode": "SM-S931NK", "msrp": 1155000, "mouCode": "SM-S931(8)NK(O)_256G"}, {"id": "s25_512", "cap": "512GB", "modelCode": "SM-S931NK512", "msrp": 1298000, "mouCode": "SM-S931(8)NK(O)_512G"}]}, {"groupId": "s25p", "name": "Galaxy S25 Plus", "cat": "삼성 S", "tab": "sseries", "variants": [{"id": "s25p_256", "cap": "256GB", "modelCode": "SM-S936NK", "msrp": 1353000, "mouCode": "SM-S936NK(O)_256G"}, {"id": "s25p_512", "cap": "512GB", "modelCode": "SM-S936NK512", "msrp": 1496000, "mouCode": "SM-S936NK(O)_512G"}]}, {"groupId": "s25u", "name": "Galaxy S25 Ultra", "cat": "삼성 S", "tab": "sseries", "variants": [{"id": "s25u_256", "cap": "256GB", "modelCode": "SM-S938NK", "msrp": 1698400, "mouCode": null}, {"id": "s25u_512", "cap": "512GB", "modelCode": "SM-S938NK512", "msrp": 1841400, "mouCode": null}]}, {"groupId": "s25e", "name": "Galaxy S25 Edge", "cat": "삼성 S", "tab": "sseries", "variants": [{"id": "s25e_256", "cap": "256GB", "modelCode": "SM-S937NK", "msrp": 1496000, "mouCode": "SM-S937NK(O)"}, {"id": "s25e_512", "cap": "512GB", "modelCode": "SM-S937NK512", "msrp": 1639000, "mouCode": "SM-S937NK(O)512G"}]}, {"groupId": "s25fe", "name": "Galaxy S25 FE", "cat": "삼성 S", "tab": "sseries", "variants": [{"id": "s25fe", "cap": "256GB", "modelCode": "SM-S731NK", "msrp": 946000, "mouCode": "SM-S731NK(O)"}]}, {"groupId": "jump4", "name": "Galaxy Jump4", "cat": "삼성 보급형", "tab": "budget", "variants": [{"id": "jump4", "cap": "", "modelCode": "SM-M366K", "msrp": 449900, "mouCode": "SM-M366K"}], "gift": 140000}, {"groupId": "a36", "name": "Galaxy A36", "cat": "삼성 보급형", "tab": "budget", "variants": [{"id": "a36", "cap": "", "modelCode": "SM-A366NK", "msrp": 499400, "mouCode": "SM-A366NK"}], "gift": 140000}, {"groupId": "a17", "name": "Galaxy A17", "cat": "삼성 보급형", "tab": "budget", "variants": [{"id": "a17", "cap": "", "modelCode": "SM-A175NK", "msrp": 319000, "mouCode": "SM-A175NK(O)"}], "gift": 110000}, {"groupId": "pompom", "name": "폼폼푸린 키즈폰", "cat": "삼성 보급형", "tab": "budget", "variants": [{"id": "pompom", "cap": "", "modelCode": "SM-A175NK-KP", "msrp": 349800, "mouCode": "SM-A175NK-KP"}], "gift": 50000}];
+const DEVICES = [{"groupId": "ip17", "name": "iPhone 17", "cat": "애플", "tab": "apple", "variants": [{"id": "ip17_256", "cap": "256GB", "modelCode": "AIP17-256", "msrp": 1287000, "특판가Code": "AIP17(P,PM)"}, {"id": "ip17_512", "cap": "512GB", "modelCode": "AIP17-512", "msrp": 1584000, "특판가Code": "AIP17(P,PM)"}]}, {"groupId": "ip17p", "name": "iPhone 17 Pro", "cat": "애플", "tab": "apple", "variants": [{"id": "ip17p_256", "cap": "256GB", "modelCode": "AIP17P-256", "msrp": 1782000, "특판가Code": "AIP17(P,PM)"}, {"id": "ip17p_512", "cap": "512GB", "modelCode": "AIP17P-512", "msrp": 2090000, "특판가Code": "AIP17(P,PM)"}, {"id": "ip17p_1t", "cap": "1TB", "modelCode": "AIP17P-1T", "msrp": 2387000, "특판가Code": "AIP17(P,PM)"}]}, {"groupId": "ip17pm", "name": "iPhone 17 Pro Max", "cat": "애플", "tab": "apple", "variants": [{"id": "ip17pm_256", "cap": "256GB", "modelCode": "AIP17PM-256", "msrp": 1980000, "특판가Code": "AIP17(P,PM)"}, {"id": "ip17pm_512", "cap": "512GB", "modelCode": "AIP17PM-512", "msrp": 2288000, "특판가Code": "AIP17(P,PM)"}, {"id": "ip17pm_1t", "cap": "1TB", "modelCode": "AIP17PM-1T", "msrp": 2585000, "특판가Code": "AIP17(P,PM)"}]}, {"groupId": "ipair", "name": "iPhone Air", "cat": "애플", "tab": "apple", "variants": [{"id": "ipair_256", "cap": "256GB", "modelCode": "AIPA-256", "msrp": 1584000, "특판가Code": "AIPA"}, {"id": "ipair_512", "cap": "512GB", "modelCode": "AIPA-512", "msrp": 1881000, "특판가Code": "AIPA"}, {"id": "ipair_1t", "cap": "1TB", "modelCode": "AIPA-1T", "msrp": 2189000, "특판가Code": "AIPA"}]}, {"groupId": "fold7", "name": "Galaxy Z Fold7", "cat": "폴더블", "tab": "foldable", "variants": [{"id": "fold7_256", "cap": "256GB", "modelCode": "SM-F966NK", "msrp": 2379300, "특판가Code": "SM-F966NK"}, {"id": "fold7_512", "cap": "512GB", "modelCode": "SM-F966NK512", "msrp": 2537700, "특판가Code": "SM-F966NK"}]}, {"groupId": "flip7", "name": "Galaxy Z Flip7", "cat": "폴더블", "tab": "foldable", "variants": [{"id": "flip7_256", "cap": "256GB", "modelCode": "SM-F766NK", "msrp": 1485000, "특판가Code": "SM-F766NK(O)"}, {"id": "flip7_512", "cap": "512GB", "modelCode": "SM-F766NK512", "msrp": 1643400, "특판가Code": "SM-F766NK(O)512G"}]}, {"groupId": "s25", "name": "Galaxy S25", "cat": "삼성 S", "tab": "sseries", "variants": [{"id": "s25_256", "cap": "256GB", "modelCode": "SM-S931NK", "msrp": 1155000, "특판가Code": "SM-S931(8)NK(O)_256G"}, {"id": "s25_512", "cap": "512GB", "modelCode": "SM-S931NK512", "msrp": 1298000, "특판가Code": "SM-S931(8)NK(O)_512G"}]}, {"groupId": "s25p", "name": "Galaxy S25 Plus", "cat": "삼성 S", "tab": "sseries", "variants": [{"id": "s25p_256", "cap": "256GB", "modelCode": "SM-S936NK", "msrp": 1353000, "특판가Code": "SM-S936NK(O)_256G"}, {"id": "s25p_512", "cap": "512GB", "modelCode": "SM-S936NK512", "msrp": 1496000, "특판가Code": "SM-S936NK(O)_512G"}]}, {"groupId": "s25u", "name": "Galaxy S25 Ultra", "cat": "삼성 S", "tab": "sseries", "variants": [{"id": "s25u_256", "cap": "256GB", "modelCode": "SM-S938NK", "msrp": 1698400, "특판가Code": null}, {"id": "s25u_512", "cap": "512GB", "modelCode": "SM-S938NK512", "msrp": 1841400, "특판가Code": null}]}, {"groupId": "s25e", "name": "Galaxy S25 Edge", "cat": "삼성 S", "tab": "sseries", "variants": [{"id": "s25e_256", "cap": "256GB", "modelCode": "SM-S937NK", "msrp": 1496000, "특판가Code": "SM-S937NK(O)"}, {"id": "s25e_512", "cap": "512GB", "modelCode": "SM-S937NK512", "msrp": 1639000, "특판가Code": "SM-S937NK(O)512G"}]}, {"groupId": "s25fe", "name": "Galaxy S25 FE", "cat": "삼성 S", "tab": "sseries", "variants": [{"id": "s25fe", "cap": "256GB", "modelCode": "SM-S731NK", "msrp": 946000, "특판가Code": "SM-S731NK(O)"}]}, {"groupId": "jump4", "name": "Galaxy Jump4", "cat": "삼성 보급형", "tab": "budget", "variants": [{"id": "jump4", "cap": "", "modelCode": "SM-M366K", "msrp": 449900, "특판가Code": "SM-M366K"}], "gift": 140000}, {"groupId": "a36", "name": "Galaxy A36", "cat": "삼성 보급형", "tab": "budget", "variants": [{"id": "a36", "cap": "", "modelCode": "SM-A366NK", "msrp": 499400, "특판가Code": "SM-A366NK"}], "gift": 140000}, {"groupId": "a17", "name": "Galaxy A17", "cat": "삼성 보급형", "tab": "budget", "variants": [{"id": "a17", "cap": "", "modelCode": "SM-A175NK", "msrp": 319000, "특판가Code": "SM-A175NK(O)"}], "gift": 110000}, {"groupId": "pompom", "name": "폼폼푸린 키즈폰", "cat": "삼성 보급형", "tab": "budget", "variants": [{"id": "pompom", "cap": "", "modelCode": "SM-A175NK-KP", "msrp": 349800, "특판가Code": "SM-A175NK-KP"}], "gift": 50000}];
 const GONGSI_BY_MODEL = {"AIP17-256": {"37000": 248000, "61000": 550000, "90000": 550000, "110000": 550000}, "AIP17-512": {"37000": 248000, "61000": 550000, "90000": 550000, "110000": 550000}, "AIP17P-1T": {"37000": 248000, "61000": 550000, "90000": 550000, "110000": 550000}, "AIP17P-256": {"37000": 248000, "61000": 550000, "90000": 550000, "110000": 550000}, "AIP17P-512": {"37000": 248000, "61000": 550000, "90000": 550000, "110000": 550000}, "AIP17PM-1T": {"37000": 86000, "61000": 127000, "90000": 250000, "110000": 250000}, "AIP17PM-256": {"37000": 86000, "61000": 127000, "90000": 250000, "110000": 250000}, "AIP17PM-512": {"37000": 86000, "61000": 127000, "90000": 250000, "110000": 250000}, "AIPA-1T": {"37000": 248000, "61000": 550000, "90000": 550000, "110000": 550000}, "AIPA-256": {"37000": 248000, "61000": 550000, "90000": 550000, "110000": 550000}, "AIPA-512": {"37000": 248000, "61000": 550000, "90000": 550000, "110000": 550000}, "SM-A175NK": {"37000": 278000, "61000": 278000, "90000": 278000, "110000": 278000}, "SM-A175NK-KP": {"37000": 305000, "61000": 305000, "90000": 305000, "110000": 305000}, "SM-A366NK": {"37000": 435000, "61000": 435000, "90000": 435000, "110000": 435000}, "SM-F766NK": {"37000": 270000, "61000": 600000, "90000": 600000, "110000": 600000}, "SM-F766NK512": {"37000": 270000, "61000": 600000, "90000": 600000, "110000": 600000}, "SM-F966NK": {"37000": 270000, "61000": 600000, "90000": 600000, "110000": 600000}, "SM-F966NK512": {"37000": 270000, "61000": 600000, "90000": 600000, "110000": 600000}, "SM-M366K": {"37000": 392000, "61000": 392000, "90000": 392000, "110000": 392000}, "SM-S731NK": {"37000": 473000, "61000": 600000, "90000": 600000, "110000": 600000}, "SM-S931NK": {"37000": 270000, "61000": 600000, "90000": 600000, "110000": 600000}, "SM-S931NK512": {"37000": 270000, "61000": 600000, "90000": 600000, "110000": 600000}, "SM-S936NK": {"37000": 270000, "61000": 600000, "90000": 600000, "110000": 600000}, "SM-S936NK512": {"37000": 270000, "61000": 600000, "90000": 600000, "110000": 600000}, "SM-S937NK": {"37000": 270000, "61000": 600000, "90000": 600000, "110000": 600000}, "SM-S937NK512": {"37000": 270000, "61000": 600000, "90000": 600000, "110000": 600000}, "SM-S938NK": {"37000": 270000, "61000": 600000, "90000": 600000, "110000": 600000}, "SM-S938NK512": {"37000": 270000, "61000": 600000, "90000": 600000, "110000": 600000}};
-const MOU_BY_CODE = {"AIP17(P,PM)": {"110000": {"010": 420000, "mnp": 420000, "change": 310000}, "90000": {"010": 420000, "mnp": 420000, "change": 310000}, "61000": {"010": 420000, "mnp": 420000, "change": 90000}, "37000": {"010": 150000, "mnp": 150000, "change": 60000}}, "AIPA": {"110000": {"010": 420000, "mnp": 420000, "change": 410000}, "90000": {"010": 420000, "mnp": 420000, "change": 410000}, "61000": {"010": 420000, "mnp": 420000, "change": 90000}, "37000": {"010": 150000, "mnp": 150000, "change": 60000}}, "SM-A175NK(O)": {"110000": {"010": 270000, "mnp": 280000, "change": 160000}, "90000": {"010": 270000, "mnp": 280000, "change": 160000}, "61000": {"010": 270000, "mnp": 280000, "change": 160000}, "37000": {"010": 270000, "mnp": 280000, "change": 160000}}, "SM-A175NK-KP": {"110000": {"010": 290000, "mnp": 260000, "change": 100000}, "90000": {"010": 290000, "mnp": 260000, "change": 100000}, "61000": {"010": 290000, "mnp": 260000, "change": 100000}, "37000": {"010": 290000, "mnp": 260000, "change": 100000}}, "SM-A366NK": {"110000": {"010": 260000, "mnp": 270000, "change": 210000}, "90000": {"010": 260000, "mnp": 270000, "change": 210000}, "61000": {"010": 260000, "mnp": 270000, "change": 210000}, "37000": {"010": 150000, "mnp": 270000, "change": 60000}}, "SM-F766NK(O)": {"110000": {"010": 440000, "mnp": 620000, "change": 420000}, "90000": {"010": 440000, "mnp": 620000, "change": 420000}, "61000": {"010": 440000, "mnp": 620000, "change": 190000}, "37000": {"010": 240000, "mnp": 250000, "change": 160000}}, "SM-F766NK(O)512G": {"110000": {"010": 520000, "mnp": 700000, "change": 500000}, "90000": {"010": 520000, "mnp": 700000, "change": 500000}, "61000": {"010": 520000, "mnp": 700000, "change": 270000}, "37000": {"010": 320000, "mnp": 330000, "change": 240000}}, "SM-F966NK": {"110000": {"010": 450000, "mnp": 620000, "change": 420000}, "90000": {"010": 450000, "mnp": 620000, "change": 420000}, "61000": {"010": 450000, "mnp": 620000, "change": 190000}, "37000": {"010": 250000, "mnp": 250000, "change": 160000}}, "SM-M366K": {"110000": {"010": 260000, "mnp": 320000, "change": 210000}, "90000": {"010": 260000, "mnp": 320000, "change": 210000}, "61000": {"010": 260000, "mnp": 320000, "change": 210000}, "37000": {"010": 150000, "mnp": 320000, "change": 60000}}, "SM-S731NK(O)": {"110000": {"010": 360000, "mnp": 260000, "change": 250000}, "90000": {"010": 360000, "mnp": 260000, "change": 250000}, "61000": {"010": 360000, "mnp": 260000, "change": 180000}, "37000": {"010": 90000, "mnp": 160000, "change": 0}}, "SM-S931(8)NK(O)_256G": {"110000": {"010": 500000, "mnp": 600000, "change": 310000}, "90000": {"010": 500000, "mnp": 600000, "change": 310000}, "61000": {"010": 500000, "mnp": 600000, "change": 240000}, "37000": {"010": 300000, "mnp": 300000, "change": 210000}}, "SM-S931(8)NK(O)_512G": {"110000": {"010": 500000, "mnp": 600000, "change": 310000}, "90000": {"010": 500000, "mnp": 600000, "change": 310000}, "61000": {"010": 500000, "mnp": 600000, "change": 240000}, "37000": {"010": 300000, "mnp": 300000, "change": 210000}}, "SM-S936NK(O)_256G": {"110000": {"010": 500000, "mnp": 800000, "change": 510000}, "90000": {"010": 500000, "mnp": 800000, "change": 510000}, "61000": {"010": 500000, "mnp": 800000, "change": 240000}, "37000": {"010": 300000, "mnp": 300000, "change": 210000}}, "SM-S936NK(O)_512G": {"110000": {"010": 500000, "mnp": 800000, "change": 510000}, "90000": {"010": 500000, "mnp": 800000, "change": 510000}, "61000": {"010": 500000, "mnp": 800000, "change": 240000}, "37000": {"010": 300000, "mnp": 300000, "change": 210000}}, "SM-S937NK(O)": {"110000": {"010": 560000, "mnp": 610000, "change": 480000}, "90000": {"010": 560000, "mnp": 610000, "change": 480000}, "61000": {"010": 560000, "mnp": 610000, "change": 300000}, "37000": {"010": 360000, "mnp": 360000, "change": 270000}}, "SM-S937NK(O)512G": {"110000": {"010": 700000, "mnp": 750000, "change": 620000}, "90000": {"010": 700000, "mnp": 750000, "change": 620000}, "61000": {"010": 700000, "mnp": 750000, "change": 440000}, "37000": {"010": 500000, "mnp": 500000, "change": 410000}}};
+const 특판가_BY_CODE = {"AIP17(P,PM)": {"110000": {"010": 420000, "mnp": 420000, "change": 310000}, "90000": {"010": 420000, "mnp": 420000, "change": 310000}, "61000": {"010": 420000, "mnp": 420000, "change": 90000}, "37000": {"010": 150000, "mnp": 150000, "change": 60000}}, "AIPA": {"110000": {"010": 420000, "mnp": 420000, "change": 410000}, "90000": {"010": 420000, "mnp": 420000, "change": 410000}, "61000": {"010": 420000, "mnp": 420000, "change": 90000}, "37000": {"010": 150000, "mnp": 150000, "change": 60000}}, "SM-A175NK(O)": {"110000": {"010": 270000, "mnp": 280000, "change": 160000}, "90000": {"010": 270000, "mnp": 280000, "change": 160000}, "61000": {"010": 270000, "mnp": 280000, "change": 160000}, "37000": {"010": 270000, "mnp": 280000, "change": 160000}}, "SM-A175NK-KP": {"110000": {"010": 290000, "mnp": 260000, "change": 100000}, "90000": {"010": 290000, "mnp": 260000, "change": 100000}, "61000": {"010": 290000, "mnp": 260000, "change": 100000}, "37000": {"010": 290000, "mnp": 260000, "change": 100000}}, "SM-A366NK": {"110000": {"010": 260000, "mnp": 270000, "change": 210000}, "90000": {"010": 260000, "mnp": 270000, "change": 210000}, "61000": {"010": 260000, "mnp": 270000, "change": 210000}, "37000": {"010": 150000, "mnp": 270000, "change": 60000}}, "SM-F766NK(O)": {"110000": {"010": 440000, "mnp": 620000, "change": 420000}, "90000": {"010": 440000, "mnp": 620000, "change": 420000}, "61000": {"010": 440000, "mnp": 620000, "change": 190000}, "37000": {"010": 240000, "mnp": 250000, "change": 160000}}, "SM-F766NK(O)512G": {"110000": {"010": 520000, "mnp": 700000, "change": 500000}, "90000": {"010": 520000, "mnp": 700000, "change": 500000}, "61000": {"010": 520000, "mnp": 700000, "change": 270000}, "37000": {"010": 320000, "mnp": 330000, "change": 240000}}, "SM-F966NK": {"110000": {"010": 450000, "mnp": 620000, "change": 420000}, "90000": {"010": 450000, "mnp": 620000, "change": 420000}, "61000": {"010": 450000, "mnp": 620000, "change": 190000}, "37000": {"010": 250000, "mnp": 250000, "change": 160000}}, "SM-M366K": {"110000": {"010": 260000, "mnp": 320000, "change": 210000}, "90000": {"010": 260000, "mnp": 320000, "change": 210000}, "61000": {"010": 260000, "mnp": 320000, "change": 210000}, "37000": {"010": 150000, "mnp": 320000, "change": 60000}}, "SM-S731NK(O)": {"110000": {"010": 360000, "mnp": 260000, "change": 250000}, "90000": {"010": 360000, "mnp": 260000, "change": 250000}, "61000": {"010": 360000, "mnp": 260000, "change": 180000}, "37000": {"010": 90000, "mnp": 160000, "change": 0}}, "SM-S931(8)NK(O)_256G": {"110000": {"010": 500000, "mnp": 600000, "change": 310000}, "90000": {"010": 500000, "mnp": 600000, "change": 310000}, "61000": {"010": 500000, "mnp": 600000, "change": 240000}, "37000": {"010": 300000, "mnp": 300000, "change": 210000}}, "SM-S931(8)NK(O)_512G": {"110000": {"010": 500000, "mnp": 600000, "change": 310000}, "90000": {"010": 500000, "mnp": 600000, "change": 310000}, "61000": {"010": 500000, "mnp": 600000, "change": 240000}, "37000": {"010": 300000, "mnp": 300000, "change": 210000}}, "SM-S936NK(O)_256G": {"110000": {"010": 500000, "mnp": 800000, "change": 510000}, "90000": {"010": 500000, "mnp": 800000, "change": 510000}, "61000": {"010": 500000, "mnp": 800000, "change": 240000}, "37000": {"010": 300000, "mnp": 300000, "change": 210000}}, "SM-S936NK(O)_512G": {"110000": {"010": 500000, "mnp": 800000, "change": 510000}, "90000": {"010": 500000, "mnp": 800000, "change": 510000}, "61000": {"010": 500000, "mnp": 800000, "change": 240000}, "37000": {"010": 300000, "mnp": 300000, "change": 210000}}, "SM-S937NK(O)": {"110000": {"010": 560000, "mnp": 610000, "change": 480000}, "90000": {"010": 560000, "mnp": 610000, "change": 480000}, "61000": {"010": 560000, "mnp": 610000, "change": 300000}, "37000": {"010": 360000, "mnp": 360000, "change": 270000}}, "SM-S937NK(O)512G": {"110000": {"010": 700000, "mnp": 750000, "change": 620000}, "90000": {"010": 700000, "mnp": 750000, "change": 620000}, "61000": {"010": 700000, "mnp": 750000, "change": 440000}, "37000": {"010": 500000, "mnp": 500000, "change": 410000}}};
 
 // 할부: 연 5.9% 원리금균등
 const APR = 0.059;
@@ -127,9 +126,9 @@ function discLabel(v){ return v==="gongsi" ? "공시지원금" : "요금할인 2
 function getGongsi(modelCode, tier) {
   return (GONGSI_BY_MODEL?.[modelCode]?.[tier]) ?? 0;
 }
-function getMou(mouCode, tier, joinType) {
-  if (!mouCode) return 0;
-  return (MOU_BY_CODE?.[mouCode]?.[tier]?.[joinType]) ?? 0;
+function get특판가(특판가Code, tier, joinType) {
+  if (!특판가Code) return 0;
+  return (특판가_BY_CODE?.[특판가Code]?.[tier]?.[joinType]) ?? 0;
 }
 
 let currentTab = "all";
@@ -162,16 +161,16 @@ function calc(group, variant) {
   const tier     = Number(document.getElementById("planTier").value);
   const isSeonyak = (dType === "seonyak25");
 
-  const mou = getMou(variant.mouCode, tier, joinType);
+  const 특판가 = get특판가(variant.특판가Code, tier, joinType);
   const gongsi = getGongsi(variant.modelCode, tier);
 
-  const netDevice = isSeonyak ? (variant.msrp - mou) : (variant.msrp - gongsi - mou);
+  const netDevice = isSeonyak ? (variant.msrp - 특판가) : (variant.msrp - gongsi - 특판가);
   const monthlyPlan = isSeonyak ? Math.round(tier * 0.75) : tier;
   const monthlyPhone = pmtEqualPayment(netDevice, months, APR);
   const total = monthlyPhone + monthlyPlan;
   const totalInterest = (monthlyPhone * months) - netDevice;
 
-  return { joinType, months, dType, tier, mou, gongsi, netDevice, monthlyPhone, monthlyPlan, total, totalInterest, isSeonyak };
+  return { joinType, months, dType, tier, 특판가, gongsi, netDevice, monthlyPhone, monthlyPlan, total, totalInterest, isSeonyak };
 }
 
 function renderPopup(groupId, variantId) {
@@ -190,9 +189,9 @@ function renderPopup(groupId, variantId) {
     `${group.cat} · ${joinLabel(r.joinType)} · ${discLabel(r.dType)} · 할부 ${r.months}개월 · ${Math.round(r.tier/1000)}K 이상`;
 
   const warn = document.getElementById("mWarn");
-  if (!variant.mouCode) {
+  if (!variant.특판가Code) {
     warn.style.display="block";
-    warn.textContent="※ 무선단가표에 MOU 코드가 없어 MOU=0원으로 계산됩니다(필요 시 코드 추가 가능).";
+    warn.textContent="※ 무선단가표에 특판가 코드가 없어 특판가=0원으로 계산됩니다(필요 시 코드 추가 가능).";
   } else {
     warn.style.display="none";
   }
@@ -215,12 +214,12 @@ function renderPopup(groupId, variantId) {
   rows.push(`<div class="row"><span>출고가</span><b>${won(variant.msrp)}</b></div>`);
 
   if (!r.isSeonyak) {
-    rows.push(`<div class="row"><span>공시지원금(요금제별)</span><b>-${won(r.gongsi)}</b></div>`);
+    rows.push(`<div class="row"><span>공시지원금</span><b>-${won(r.gongsi)}</b></div>`);
   } else {
-    rows.push(`<div class="row"><span>요금할인</span><b>25% 적용(공시 미적용)</b></div>`);
+    rows.push(`<div class="row"><span>요금할인</span><b>25% 적용</b></div>`);
   }
 
-  rows.push(`<div class="row"><span>MOU 지원(무선단가표)</span><b>-${won(r.mou)}</b></div>`);
+  rows.push(`<div class="row"><span>특판가 지원(특별 지원금)</span><b>-${won(r.특판가)}</b></div>`);
   rows.push(`<div class="row"><span>단말 실구매가</span><b>${won(r.netDevice)}</b></div>`);
   rows.push(`<div class="row"><span>총 할부이자(예상)</span><b>${won(r.totalInterest)}</b></div>`);
 
@@ -282,9 +281,9 @@ function renderGrid() {
 
   grid.innerHTML = list.map(g => {
     const v = g.variants[0];
-    const mou = getMou(v.mouCode, tier, joinType);
+    const 특판가 = get특판가(v.특판가Code, tier, joinType);
     const gongsi = getGongsi(v.modelCode, tier);
-    const net = isSeonyak ? (v.msrp - mou) : (v.msrp - gongsi - mou);
+    const net = isSeonyak ? (v.msrp - 특판가) : (v.msrp - gongsi - 특판가);
 
     return `
       <div class="card" onclick="showPopup('${g.groupId}')">
@@ -296,7 +295,7 @@ function renderGrid() {
 
         <div class="line"><span>월 통신요금</span><span>${won(monthlyPlanForCard)}</span></div>
         ${!isSeonyak ? `<div class="line"><span>공시(요금제별)</span><span>${won(gongsi)}</span></div>` : ``}
-        <div class="line"><span>MOU</span><span>${won(mou)}</span></div>
+        <div class="line"><span>특판가</span><span>${won(특판가)}</span></div>
         <div class="line"><span>실구매가</span><span>${won(net)}</span></div>
 
         ${g.gift ? `<div class="pill">상품권 ${won(g.gift)}</div>` : `<div class="pill">${g.variants.length>1 ? "용량 선택 가능" : "눌러서 월납 확인"}</div>`}
