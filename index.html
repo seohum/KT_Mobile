@@ -40,6 +40,8 @@ hr{border:none;border-top:1px solid var(--bd);margin:12px 0;}
 .btn.primary{border-color:#111;font-weight:1100;}
 .row select{padding:8px 10px;border-radius:10px;}
 .warn{font-size:12px;color:#b45309;background:#fffbeb;border:1px solid #fef3c7;padding:8px 10px;border-radius:12px;}
+
+.free{color:#d00;font-weight:1100;font-size:1.5em;}
 </style>
 </head>
 <body>
@@ -56,7 +58,7 @@ hr{border:none;border-top:1px solid var(--bd);margin:12px 0;}
 
         <select id="discountType">
           <option value="gongsi">공시지원금</option>
-          <option value="seonyak25">요금할인 25%(선약)</option>
+          <option value="seonyak25">요금할인 25%(선택약정)</option>
         </select>
 
         <select id="months">
@@ -120,8 +122,18 @@ function pmtEqualPayment(principal, months, apr){
 }
 
 function won(n){ return Math.round(n).toLocaleString("ko-KR") + "원"; }
+
+function fmtNetPrice(value){
+  // 실구매가가 0 이하이면 0원 처리 + 무료 강조 표시
+  const v = Math.max(0, Math.round(value));
+  if (v === 0){
+    return `<span class="free">0원(무료)</span>`;
+  }
+  return won(v);
+}
+
 function joinLabel(v){ return v==="change" ? "기기변경" : v==="mnp" ? "번호이동(MNP)" : "010신규"; }
-function discLabel(v){ return v==="gongsi" ? "공시지원금" : "요금할인 25%(선약)"; }
+function discLabel(v){ return v==="gongsi" ? "공시지원금" : "요금할인 25%(선택약정)"; }
 
 function getGongsi(modelCode, tier) {
   return (GONGSI_BY_MODEL?.[modelCode]?.[tier]) ?? 0;
@@ -166,7 +178,7 @@ function calc(group, variant) {
 
   const netDevice = isSeonyak ? (variant.msrp - 특판가) : (variant.msrp - gongsi - 특판가);
   const monthlyPlan = isSeonyak ? Math.round(tier * 0.75) : tier;
-  const monthlyPhone = pmtEqualPayment(netDevice, months, APR);
+  const monthlyPhone = pmtEqualPayment(Math.max(0, netDevice), months, APR);
   const total = monthlyPhone + monthlyPlan;
   const totalInterest = (monthlyPhone * months) - netDevice;
 
@@ -219,8 +231,8 @@ function renderPopup(groupId, variantId) {
     rows.push(`<div class="row"><span>요금할인</span><b>25% 적용</b></div>`);
   }
 
-  rows.push(`<div class="row"><span>특판가 지원(특별 지원금)</span><b>-${won(r.특판가)}</b></div>`);
-  rows.push(`<div class="row"><span>단말 실구매가</span><b>${won(r.netDevice)}</b></div>`);
+  rows.push(`<div class="row"><span>특판가 지원(특별지원금)</span><b>-${won(r.특판가)}</b></div>`);
+  rows.push(`<div class="row"><span>단말 실구매가</span><b>${fmtNetPrice(r.netDevice)}</b></div>`);
   rows.push(`<div class="row"><span>총 할부이자(예상)</span><b>${won(r.totalInterest)}</b></div>`);
 
   if (group.gift) {
@@ -296,7 +308,7 @@ function renderGrid() {
         <div class="line"><span>월 통신요금</span><span>${won(monthlyPlanForCard)}</span></div>
         ${!isSeonyak ? `<div class="line"><span>공시(요금제별)</span><span>${won(gongsi)}</span></div>` : ``}
         <div class="line"><span>특판가</span><span>${won(특판가)}</span></div>
-        <div class="line"><span>실구매가</span><span>${won(net)}</span></div>
+        <div class="line"><span>실구매가</span><span>${fmtNetPrice(net)}</span></div>
 
         ${g.gift ? `<div class="pill">상품권 ${won(g.gift)}</div>` : `<div class="pill">${g.variants.length>1 ? "용량 선택 가능" : "눌러서 월납 확인"}</div>`}
       </div>
