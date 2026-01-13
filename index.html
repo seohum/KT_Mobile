@@ -231,8 +231,8 @@ function renderPopup(groupId, variantId) {
     rows.push(`<div class="row"><span>요금할인</span><b>25% 적용</b></div>`);
   }
 
-  rows.push(`<div class="row"><span>특판가 지원(특별지원금)</span><b>-${won(r.특판가)}</b></div>`);
-  rows.push(`<div class="row"><span>단말 실구매가</span><b>${fmtNetPrice(r.netDevice)}</b></div>`);
+  rows.push(`<div class="row"><span>특판가지원(특별지원금)</span><b>-${won(r.특판가)}</b></div>`);
+  rows.push(`<div class="row"><span>단말실구매가</span><b>${fmtNetPrice(r.netDevice)}</b></div>`);
   rows.push(`<div class="row"><span>총 할부이자(예상)</span><b>${won(r.totalInterest)}</b></div>`);
 
   if (group.gift) {
