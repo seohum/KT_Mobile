@@ -63,60 +63,6 @@
       "img": "./assets/img/devices/IPAIR.png"
     },
     {
-      "code": "S25",
-      "brand": "samsung",
-      "name": "Galaxy S25",
-      "storages": [
-        256,
-        512
-      ],
-      "msrp": {
-        "256": 1155000,
-        "512": 1255000
-      },
-      "img": "./assets/img/devices/S25.png"
-    },
-    {
-      "code": "S25P",
-      "brand": "samsung",
-      "name": "Galaxy S25+",
-      "storages": [
-        256,
-        512
-      ],
-      "msrp": {
-        "256": 1353000,
-        "512": 1453000
-      },
-      "img": "./assets/img/devices/S25P.png"
-    },
-    {
-      "code": "S25U",
-      "brand": "samsung",
-      "name": "Galaxy S25 Ultra",
-      "storages": [
-        256,
-        512
-      ],
-      "msrp": {
-        "256": 1698400,
-        "512": 1798400
-      },
-      "img": "./assets/img/devices/S25U.png"
-    },
-    {
-      "code": "S25FE",
-      "brand": "samsung",
-      "name": "Galaxy S25 FE",
-      "storages": [
-        256
-      ],
-      "msrp": {
-        "256": 946000
-      },
-      "img": "./assets/img/devices/S25FE.png"
-    },
-    {
       "code": "FLIP7",
       "brand": "samsung",
       "name": "Galaxy Z Flip7",
@@ -133,60 +79,14 @@
       "brand": "samsung",
       "name": "Galaxy Z Fold7",
       "storages": [
-        256
+        256,
+        512
       ],
       "msrp": {
-        "256": 2379300
+        "256": 2379300,
+        "512": 2579300
       },
       "img": "./assets/img/devices/FOLD7.png"
-    },
-    {
-      "code": "JUMP4",
-      "brand": "samsung",
-      "name": "Galaxy Jump4",
-      "storages": [
-        128
-      ],
-      "msrp": {
-        "128": 449900
-      },
-      "img": "./assets/img/devices/JUMP4.png"
-    },
-    {
-      "code": "A36",
-      "brand": "samsung",
-      "name": "Galaxy A36",
-      "storages": [
-        128
-      ],
-      "msrp": {
-        "128": 499400
-      },
-      "img": "./assets/img/devices/A36.png"
-    },
-    {
-      "code": "A17",
-      "brand": "samsung",
-      "name": "Galaxy A17 (LTE)",
-      "storages": [
-        64
-      ],
-      "msrp": {
-        "64": 319000
-      },
-      "img": "./assets/img/devices/A17.png"
-    },
-    {
-      "code": "POMPOM",
-      "brand": "samsung",
-      "name": "폼폼푸린 키즈폰",
-      "storages": [
-        64
-      ],
-      "msrp": {
-        "64": 349800
-      },
-      "img": "./assets/img/devices/POMPOM.png"
     }
   ]
 }

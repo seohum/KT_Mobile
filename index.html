@@ -1,36 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>KT 단말 개통</title>
-<link rel="stylesheet" href="./assets/css/style.css"/>
+<meta charset="UTF-8">
+<title>KT 단말기 개통</title>
+<link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-<header class="top">
-<h1>KT 단말 개통</h1>
-<p>프리미엄 · 보급형 통합</p>
-</header>
-
-<nav class="tabs">
+<div class="tabs">
 <button data-filter="all" class="active">전체</button>
-<button data-filter="premium">아이폰(APPLE)</button>
-<button data-filter="budget">삼성(SAMSUNG)</button>
-<button data-filter="budget">보급형</button>
-</nav>
-
-<main>
-<section id="deviceGrid" class="grid"></section>
-</main>
-
-<div id="orderModal" class="modal hidden">
-<div class="modal-box">
-<h3 id="modalTitle"></h3>
-<p id="modalPrice"></p>
-<button onclick="closeModal()">닫기</button>
+<button data-filter="iphone">아이폰</button>
+<button data-filter="samsung">삼성</button>
 </div>
-</div>
-
+<div id="deviceGrid" class="grid"></div>
 <script src="./assets/js/app.js"></script>
 </body>
 </html>

@@ -1,91 +1,52 @@
 
 document.addEventListener('DOMContentLoaded', init);
+let DEVICES=[],GONGSI={},SPECIAL={},ORDER={};
 
-let DEVICES = [];
+function storageLabel(s){return s==1024?'1TB':s+'GB';}
+function won(n){return n.toLocaleString()+'원';}
 
-/* ===== 공통 유틸 ===== */
-function storageLabel(size){
-  return size === 1024 ? '1TB' : size + 'GB';
-}
-function won(n){ return n.toLocaleString() + '원'; }
-
-/* ===== 초기화 ===== */
 async function init(){
-  const res = await fetch('./data/devices.json');
-  const json = await res.json();
-  DEVICES = json.devices;
-  bindTabs();
-  renderDevices('all');
+  DEVICES = (await (await fetch('./data/devices.json')).json()).devices;
+  GONGSI = await (await fetch('./data/gongsi.json')).json();
+  SPECIAL = await (await fetch('./data/special.json')).json();
+  ORDER = await (await fetch('./data/orderLink.json')).json();
+  bindTabs(); render('all');
 }
 
-/* ===== 탭 (전체 / 아이폰 / 삼성) ===== */
 function bindTabs(){
-  document.querySelectorAll('.tabs button').forEach(btn=>{
-    btn.onclick = ()=>{
-      document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      renderDevices(btn.dataset.filter);
-    };
-  });
-}
-
-/* ===== 렌더링 ===== */
-function renderDevices(filter){
-  const grid = document.getElementById('deviceGrid');
-  grid.innerHTML = '';
-
-  DEVICES
-    .filter(d => filter === 'all' || d.brand === filter)
-    .forEach(d => {
-      const defaultStorage = d.storages[0];
-      const card = document.createElement('div');
-      card.className = 'card';
-
-      card.innerHTML = `
-        <img src="${d.img}" alt="${d.name}">
-        <h3>${d.name}</h3>
-        <div class="price" id="price-${d.code}">
-          출고가 ${won(d.msrp[defaultStorage])}
-        </div>
-        ${renderStorageSelect(d)}
-        <button class="btn" onclick="openOrder('${d.code}')">주문하기</button>
-      `;
-
-      grid.appendChild(card);
-
-      if(d.storages.length > 1){
-        document.getElementById(`storage-${d.code}`)
-          .addEventListener('change', e=>{
-            const size = Number(e.target.value);
-            document.getElementById(`price-${d.code}`).innerText =
-              '출고가 ' + won(d.msrp[size]);
-          });
-      }
-    });
-}
-
-/* ===== 용량 선택 ===== */
-function renderStorageSelect(d){
-  if(d.storages.length <= 1) return '';
-  return `
-    <select id="storage-${d.code}">
-      ${d.storages.map(s =>
-        `<option value="${s}">${storageLabel(s)}</option>`
-      ).join('')}
-    </select>
-  `;
-}
-
-/* ===== 주문하기 ===== */
-function openOrder(code){
-  const d = DEVICES.find(x=>x.code===code);
-  let storage = d.storages[0];
-  if(d.storages.length>1){
-    storage = Number(document.getElementById(`storage-${code}`).value);
+ document.querySelectorAll('.tabs button').forEach(b=>{
+  b.onclick=()=>{
+   document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));
+   b.classList.add('active'); render(b.dataset.filter);
   }
-  alert(
-    '단말: ' + d.name + '\n' +
-    '용량: ' + storageLabel(storage) + '\n' +
-    '출고가: ' + won(d.msrp[storage])
-  );
+ });
+}
+
+function render(filter){
+ const g=document.getElementById('deviceGrid'); g.innerHTML='';
+ DEVICES.filter(d=>filter=='all'||d.brand==filter).forEach(d=>{
+  let s=d.storages[0],p=d.msrp[s];
+  let card=document.createElement('div'); card.className='card';
+  card.innerHTML=`
+   <img src="${d.img}">
+   <h3>${d.name}</h3>
+   <div id="price-${d.code}" class="price">${won(p)}</div>
+   ${d.storages.length>1?'<select id="st-'+d.code+'">'+d.storages.map(x=>`<option value="${x}">${storageLabel(x)}</option>`).join('')+'</select>':''}
+   <button onclick="order('${d.code}')">주문하기</button>
+  `;
+  g.appendChild(card);
+  if(d.storages.length>1){
+   document.getElementById('st-'+d.code).onchange=e=>{
+    let v=+e.target.value;
+    document.getElementById('price-'+d.code).innerText=won(d.msrp[v]);
+   }
+  }
+ });
+}
+
+function order(code){
+ const d=DEVICES.find(x=>x.code==code);
+ let s=d.storages.length>1?+document.getElementById('st-'+code).value:d.storages[0];
+ let url=ORDER.base+`?model=${encodeURIComponent(d.name)}&storage=${storageLabel(s)}&price=${d.msrp[s]}`;
+ window.open(url,'_blank');
 }
