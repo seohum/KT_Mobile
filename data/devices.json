@@ -1,14 +1,18 @@
 {
   "devices": [
-
-    /* ================= 애플 (프리미엄) ================= */
     {
       "brand": "apple",
       "segment": "premium",
       "code": "IP17",
       "name": "iPhone 17",
-      "storages": [256, 512],
-      "msrp": { "256": 1287000, "512": 1437000 },
+      "storages": [
+        256,
+        512
+      ],
+      "msrp": {
+        "256": 1287000,
+        "512": 1437000
+      },
       "img": "./assets/img/devices/IP17.png"
     },
     {
@@ -16,8 +20,16 @@
       "segment": "premium",
       "code": "IP17P",
       "name": "iPhone 17 Pro",
-      "storages": [256, 512, 1024],
-      "msrp": { "256": 1782000, "512": 1932000, "1024": 2232000 },
+      "storages": [
+        256,
+        512,
+        1024
+      ],
+      "msrp": {
+        "256": 1782000,
+        "512": 1932000,
+        "1024": 2232000
+      },
       "img": "./assets/img/devices/IP17P.png"
     },
     {
@@ -25,8 +37,16 @@
       "segment": "premium",
       "code": "IP17PM",
       "name": "iPhone 17 Pro Max",
-      "storages": [256, 512, 1024],
-      "msrp": { "256": 1990000, "512": 2140000, "1024": 2440000 },
+      "storages": [
+        256,
+        512,
+        1024
+      ],
+      "msrp": {
+        "256": 1990000,
+        "512": 2140000,
+        "1024": 2440000
+      },
       "img": "./assets/img/devices/IP17PM.png"
     },
     {
@@ -34,19 +54,31 @@
       "segment": "premium",
       "code": "IPAIR",
       "name": "iPhone Air",
-      "storages": [256, 512, 1024],
-      "msrp": { "256": 1584000, "512": 1734000, "1024": 2034000 },
+      "storages": [
+        256,
+        512,
+        1024
+      ],
+      "msrp": {
+        "256": 1584000,
+        "512": 1734000,
+        "1024": 2034000
+      },
       "img": "./assets/img/devices/IPAIR.png"
     },
-
-    /* ================= 삼성 프리미엄 ================= */
     {
       "brand": "samsung",
       "segment": "premium",
       "code": "S25",
       "name": "Galaxy S25",
-      "storages": [256, 512],
-      "msrp": { "256": 1155000, "512": 1255000 },
+      "storages": [
+        256,
+        512
+      ],
+      "msrp": {
+        "256": 1155000,
+        "512": 1255000
+      },
       "img": "./assets/img/devices/S25.png"
     },
     {
@@ -54,8 +86,14 @@
       "segment": "premium",
       "code": "S25P",
       "name": "Galaxy S25+",
-      "storages": [256, 512],
-      "msrp": { "256": 1353000, "512": 1453000 },
+      "storages": [
+        256,
+        512
+      ],
+      "msrp": {
+        "256": 1353000,
+        "512": 1453000
+      },
       "img": "./assets/img/devices/S25P.png"
     },
     {
@@ -63,8 +101,14 @@
       "segment": "premium",
       "code": "S25U",
       "name": "Galaxy S25 Ultra",
-      "storages": [256, 512],
-      "msrp": { "256": 1698400, "512": 1798400 },
+      "storages": [
+        256,
+        512
+      ],
+      "msrp": {
+        "256": 1698400,
+        "512": 1798400
+      },
       "img": "./assets/img/devices/S25U.png"
     },
     {
@@ -72,8 +116,12 @@
       "segment": "premium",
       "code": "S25FE",
       "name": "Galaxy S25 FE",
-      "storages": [256],
-      "msrp": { "256": 946000 },
+      "storages": [
+        256
+      ],
+      "msrp": {
+        "256": 946000
+      },
       "img": "./assets/img/devices/S25FE.png"
     },
     {
@@ -81,8 +129,12 @@
       "segment": "premium",
       "code": "FLIP7",
       "name": "Galaxy Z Flip7",
-      "storages": [256],
-      "msrp": { "256": 1485000 },
+      "storages": [
+        256
+      ],
+      "msrp": {
+        "256": 1485000
+      },
       "img": "./assets/img/devices/FLIP7.png"
     },
     {
@@ -90,19 +142,23 @@
       "segment": "premium",
       "code": "FOLD7",
       "name": "Galaxy Z Fold7",
-      "storages": [256],
-      "msrp": { "256": 2379300 },
+      "storages": [
+        256
+      ],
+      "msrp": {
+        "256": 2379300
+      },
       "img": "./assets/img/devices/FOLD7.png"
     },
-
-    /* ================= 삼성 보급형 ================= */
     {
       "brand": "samsung",
       "segment": "budget",
       "code": "JUMP4",
       "name": "Galaxy Jump4",
       "storages": [],
-      "msrp": { "default": 449900 },
+      "msrp": {
+        "default": 449900
+      },
       "img": "./assets/img/devices/JUMP4.png"
     },
     {
@@ -111,7 +167,9 @@
       "code": "A36",
       "name": "Galaxy A36",
       "storages": [],
-      "msrp": { "default": 499400 },
+      "msrp": {
+        "default": 499400
+      },
       "img": "./assets/img/devices/A36.png"
     },
     {
@@ -120,7 +178,9 @@
       "code": "A17",
       "name": "Galaxy A17 (LTE)",
       "storages": [],
-      "msrp": { "default": 319000 },
+      "msrp": {
+        "default": 319000
+      },
       "img": "./assets/img/devices/A17.png"
     },
     {
@@ -129,19 +189,10 @@
       "code": "POMPOM",
       "name": "폼폼푸린 키즈폰",
       "storages": [],
-      "msrp": { "default": 349800 },
+      "msrp": {
+        "default": 349800
+      },
       "img": "./assets/img/devices/POMPOM.png"
-    }
-
-  ]
-}
-      "img": "./assets/img/devices/FLIP7.png"
-    },
-    {
-      "code": "IP17PM",
-      "name": "iPhone 17 Pro Max",
-      "msrp": 1990000,
-      "img": "./assets/img/devices/IP17PM.png"
     }
   ]
 }
