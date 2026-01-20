@@ -1,30 +1,43 @@
 document.addEventListener('DOMContentLoaded', init);
+let ALL=[];
 
 async function init(){
-  try{
-    const res = await fetch('./data/devices.json');
-    if(!res.ok) throw new Error('fetch failed');
-    const json = await res.json();
-    render(json.devices);
-  }catch(e){
-    document.getElementById('deviceGrid').innerHTML =
-      '<p style="padding:16px">단말 데이터를 불러오지 못했습니다.</p>';
-    console.error(e);
-  }
+  const res = await fetch('./data/devices.json');
+  const json = await res.json();
+  ALL = json.devices;
+  render('all');
+  bindTabs();
 }
 
-function render(list){
+function bindTabs(){
+  document.querySelectorAll('.tabs button').forEach(btn=>{
+    btn.onclick=()=>{
+      document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.filter);
+    }
+  });
+}
+
+function render(filter){
   const grid=document.getElementById('deviceGrid');
   grid.innerHTML='';
-  list.forEach(d=>{
-    const el=document.createElement('div');
-    el.className='card';
-    el.innerHTML=`
-      <img src="${d.img}" alt="${d.name}">
-      <h3>${d.name}</h3>
-      <div class="price">출고가 ${Number(d.msrp).toLocaleString()}원</div>
-      <button class="btn">주문하기</button>
-    `;
-    grid.appendChild(el);
-  });
+  ALL.filter(d=> filter==='all' || d.segment===filter)
+     .forEach(d=>{
+       const el=document.createElement('div');
+       el.className='card';
+       el.innerHTML=`
+         <img src="${d.img}" alt="${d.name}">
+         <h3>${d.name}</h3>
+         <div class="price">출고가 ${priceText(d)}</div>
+         ${d.segment==='budget' ? '<span class="badge">보급형</span>' : ''}
+       `;
+       grid.appendChild(el);
+     });
+}
+
+function priceText(d){
+  if(d.storages.length===0) return d.msrp.default.toLocaleString()+'원';
+  const min=Math.min(...d.storages.map(s=>d.msrp[s]));
+  return min.toLocaleString()+'원~';
 }
