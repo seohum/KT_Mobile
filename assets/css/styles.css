@@ -1,0 +1,47 @@
+:root{--bg:#f5f6f8;--card:#fff;--text:#111;--muted:#6b7280;--line:#e5e7eb;--brand:#0f766e;--danger:#e53935;--shadow:0 8px 20px rgba(0,0,0,.06)}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:var(--bg);color:var(--text)}
+.container{max-width:1200px;margin:0 auto;padding:16px}
+.topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.topbar .inner{max-width:1200px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.badge{font-size:12px;font-weight:900;padding:6px 10px;border-radius:999px;background:#e7f7f5;color:var(--brand)}
+.title{font-size:16px;font-weight:1000}.sub{font-size:12px;color:var(--muted)}
+.hero{margin:14px 0 18px;background:linear-gradient(135deg,#0b1f1d,#0f766e);color:#fff;border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+.hero h1{margin:0;font-size:22px}.hero p{margin:6px 0 0;color:rgba(255,255,255,.85);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.card .img{background:#fff;padding:14px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
+.card img{width:100%;height:auto;max-height:180px;object-fit:contain}
+.card .body{padding:14px}
+.card .name{font-weight:1000;font-size:15px;line-height:1.25}
+.card .meta{margin-top:6px;color:var(--muted);font-size:12px}
+.card .promo{margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.pill{font-size:12px;font-weight:1000;padding:6px 10px;border-radius:999px;background:#fff3f2;color:var(--danger);border:1px solid #ffd7d3}
+.btn{width:100%;margin-top:10px;padding:12px;border:0;border-radius:14px;background:var(--brand);color:#fff;font-weight:1000;cursor:pointer}
+.small{font-size:12px;color:var(--muted);margin-top:8px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;z-index:1000}
+.modal.on{display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:#fff;width:100%;max-width:980px;border-radius:18px 18px 0 0;overflow:hidden;max-height:92vh;display:flex;flex-direction:column}
+.sheetHeader{background:linear-gradient(135deg,#0b1f1d,#0f766e);color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.sheetHeader .hTitle{font-weight:1000}
+.sheetHeader .close{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);color:#fff;padding:8px 10px;border-radius:12px;cursor:pointer}
+.sheetBody{display:grid;grid-template-columns:1.1fr 1fr;overflow:auto}
+.left{padding:16px;border-right:1px solid var(--line)}.right{padding:16px}
+.deviceHero{display:flex;gap:14px;align-items:center}
+.deviceHero img{width:120px;height:120px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px}
+.deviceHero .dname{font-weight:1000;font-size:18px}
+.tabs{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+.tab{padding:10px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;font-weight:1000;cursor:pointer;font-size:13px}
+.tab.active{background:#e7f7f5;border-color:#bfece6;color:var(--brand)}
+.select{margin-top:12px;display:grid;gap:10px}
+.select label{font-size:12px;color:var(--muted);font-weight:900}
+select{width:100%;padding:12px;border-radius:14px;border:1px solid var(--line);background:#fff;font-weight:900}
+.row{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.row .k{color:var(--muted);font-weight:900}.row .v{font-weight:1000}
+.finalWrap{margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px}
+.finalLabel{color:var(--muted);font-weight:1000}.finalPrice{margin-top:6px;font-size:34px;font-weight:1000;letter-spacing:-.5px}
+.finalPrice.free{color:var(--danger)}
+.note{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.4}
+.mobileCTA{position:fixed;left:0;right:0;bottom:0;background:var(--brand);color:#fff;padding:12px 14px;text-align:center;font-weight:1000;display:none;z-index:1100}
+@media (max-width:1024px){.grid{grid-template-columns:repeat(2,1fr)}.sheetBody{grid-template-columns:1fr}.left{border-right:0;border-bottom:1px solid var(--line)}}
+@media (max-width:640px){.grid{grid-template-columns:1fr}.hero h1{font-size:20px}.finalPrice{font-size:42px}.mobileCTA{display:block}body{padding-bottom:56px}}
