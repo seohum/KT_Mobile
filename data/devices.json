@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "updated": "2026-01-20"
+  },
+  "devices": [
+    {
+      "code": "S25",
+      "name": "Galaxy S25",
+      "msrp": 1155000,
+      "img": "./assets/img/devices/S25.svg"
+    },
+    {
+      "code": "S25U",
+      "name": "Galaxy S25 Ultra",
+      "msrp": 1698400,
+      "img": "./assets/img/devices/S25U.svg"
+    },
+    {
+      "code": "FOLD7",
+      "name": "Galaxy Z Fold7",
+      "msrp": 2379300,
+      "img": "./assets/img/devices/FOLD7.svg"
+    },
+    {
+      "code": "FLIP7",
+      "name": "Galaxy Z Flip7",
+      "msrp": 1485000,
+      "img": "./assets/img/devices/FLIP7.svg"
+    },
+    {
+      "code": "IP17PM",
+      "name": "iPhone 17 Pro Max",
+      "msrp": 1990000,
+      "img": "./assets/img/devices/IP17PM.svg"
+    }
+  ]
+}
