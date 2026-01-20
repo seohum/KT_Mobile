@@ -2,8 +2,8 @@
   "devices": [
     {
       "code": "IP17",
+      "brand": "iphone",
       "name": "iPhone 17",
-      "segment": "premium",
       "storages": [
         256,
         512
@@ -16,8 +16,8 @@
     },
     {
       "code": "IP17P",
+      "brand": "iphone",
       "name": "iPhone 17 Pro",
-      "segment": "premium",
       "storages": [
         256,
         512,
@@ -32,8 +32,8 @@
     },
     {
       "code": "IP17PM",
+      "brand": "iphone",
       "name": "iPhone 17 Pro Max",
-      "segment": "premium",
       "storages": [
         256,
         512,
@@ -48,8 +48,8 @@
     },
     {
       "code": "IPAIR",
+      "brand": "iphone",
       "name": "iPhone Air",
-      "segment": "premium",
       "storages": [
         256,
         512,
@@ -64,8 +64,8 @@
     },
     {
       "code": "S25",
+      "brand": "samsung",
       "name": "Galaxy S25",
-      "segment": "premium",
       "storages": [
         256,
         512
@@ -78,8 +78,8 @@
     },
     {
       "code": "S25P",
+      "brand": "samsung",
       "name": "Galaxy S25+",
-      "segment": "premium",
       "storages": [
         256,
         512
@@ -92,8 +92,8 @@
     },
     {
       "code": "S25U",
+      "brand": "samsung",
       "name": "Galaxy S25 Ultra",
-      "segment": "premium",
       "storages": [
         256,
         512
@@ -106,8 +106,8 @@
     },
     {
       "code": "S25FE",
+      "brand": "samsung",
       "name": "Galaxy S25 FE",
-      "segment": "premium",
       "storages": [
         256
       ],
@@ -118,8 +118,8 @@
     },
     {
       "code": "FLIP7",
+      "brand": "samsung",
       "name": "Galaxy Z Flip7",
-      "segment": "premium",
       "storages": [
         256
       ],
@@ -130,8 +130,8 @@
     },
     {
       "code": "FOLD7",
+      "brand": "samsung",
       "name": "Galaxy Z Fold7",
-      "segment": "premium",
       "storages": [
         256
       ],
@@ -142,8 +142,8 @@
     },
     {
       "code": "JUMP4",
+      "brand": "samsung",
       "name": "Galaxy Jump4",
-      "segment": "budget",
       "storages": [
         128
       ],
@@ -154,8 +154,8 @@
     },
     {
       "code": "A36",
+      "brand": "samsung",
       "name": "Galaxy A36",
-      "segment": "budget",
       "storages": [
         128
       ],
@@ -166,8 +166,8 @@
     },
     {
       "code": "A17",
+      "brand": "samsung",
       "name": "Galaxy A17 (LTE)",
-      "segment": "budget",
       "storages": [
         64
       ],
@@ -178,8 +178,8 @@
     },
     {
       "code": "POMPOM",
+      "brand": "samsung",
       "name": "폼폼푸린 키즈폰",
-      "segment": "budget",
       "storages": [
         64
       ],
