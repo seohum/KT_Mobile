@@ -8,4 +8,10 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Noto Sans KR',sans-s
 .card img{width:100%;border-radius:10px}
 .card h3{margin:8px 0 4px;font-size:15px}
 .price{font-weight:700}
+select{width:100%;margin-top:6px}
+.btn{margin-top:8px;width:100%;padding:10px;border:none;border-radius:8px;background:#2563eb;color:#fff}
 .badge{display:inline-block;margin-top:4px;padding:4px 6px;border-radius:6px;font-size:12px;background:#fee2e2;color:#b91c1c}
+
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center}
+.modal.hidden{display:none}
+.modal-box{background:#fff;padding:20px;border-radius:12px;width:80%}

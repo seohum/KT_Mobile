@@ -10,7 +10,7 @@
 
 <header class="top">
   <h1>KT 단말 개통</h1>
-  <p>프리미엄 · 보급형 단말 통합</p>
+  <p>프리미엄 · 보급형 · 공시/특판</p>
 </header>
 
 <nav class="tabs">
@@ -22,6 +22,15 @@
 <main>
   <section id="deviceGrid" class="grid"></section>
 </main>
+
+<!-- 주문하기 모달 -->
+<div id="orderModal" class="modal hidden">
+  <div class="modal-box">
+    <h3 id="modalTitle"></h3>
+    <p id="modalPrice"></p>
+    <button onclick="closeModal()">닫기</button>
+  </div>
+</div>
 
 <script src="./assets/js/app.js"></script>
 </body>
