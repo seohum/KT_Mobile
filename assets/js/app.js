@@ -26,19 +26,17 @@ function render(filter){
      .forEach(d=>{
        const el=document.createElement('div');
        el.className='card';
-
        let storageUI='';
        if(d.storages.length>0){
-         storageUI='<select>'+d.storages.map(s=>`<option value="${s}">${s}GB</option>`).join('')+'</select>';
+         storageUI='<select>'+d.storages.map(s=>`<option>${s}GB</option>`).join('')+'</select>';
        }
-
        el.innerHTML=`
          <img src="${d.img}">
          <h3>${d.name}</h3>
          <div class="price">출고가 ${priceText(d)}</div>
          ${storageUI}
          ${d.segment==='budget' ? '<span class="badge">보급형</span>' : ''}
-         <button class="btn" onclick="openModal('${d.name}', '${priceText(d)}')">주문하기</button>
+         <button class="btn" onclick="openModal('${d.name}','${priceText(d)}')">주문하기</button>
        `;
        grid.appendChild(el);
      });
@@ -50,7 +48,7 @@ function priceText(d){
   return min.toLocaleString()+'원~';
 }
 
-function openModal(name, price){
+function openModal(name,price){
   document.getElementById('modalTitle').innerText=name;
   document.getElementById('modalPrice').innerText='예상 출고가 '+price;
   document.getElementById('orderModal').classList.remove('hidden');

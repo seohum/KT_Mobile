@@ -13,7 +13,24 @@
         "256": 1287000,
         "512": 1437000
       },
-      "img": "./assets/img/devices/IP17.svg"
+      "img": "./assets/img/devices/IP17.png"
+    },
+    {
+      "brand": "apple",
+      "segment": "premium",
+      "code": "IP17P",
+      "name": "iPhone 17 Pro",
+      "storages": [
+        256,
+        512,
+        1024
+      ],
+      "msrp": {
+        "256": 1782000,
+        "512": 1932000,
+        "1024": 2232000
+      },
+      "img": "./assets/img/devices/IP17P.png"
     },
     {
       "brand": "apple",
@@ -30,7 +47,24 @@
         "512": 2140000,
         "1024": 2440000
       },
-      "img": "./assets/img/devices/IP17PM.svg"
+      "img": "./assets/img/devices/IP17PM.png"
+    },
+    {
+      "brand": "apple",
+      "segment": "premium",
+      "code": "IPAIR",
+      "name": "iPhone Air",
+      "storages": [
+        256,
+        512,
+        1024
+      ],
+      "msrp": {
+        "256": 1584000,
+        "512": 1734000,
+        "1024": 2034000
+      },
+      "img": "./assets/img/devices/IPAIR.png"
     },
     {
       "brand": "samsung",
@@ -45,7 +79,76 @@
         "256": 1155000,
         "512": 1255000
       },
-      "img": "./assets/img/devices/S25.svg"
+      "img": "./assets/img/devices/S25.png"
+    },
+    {
+      "brand": "samsung",
+      "segment": "premium",
+      "code": "S25P",
+      "name": "Galaxy S25+",
+      "storages": [
+        256,
+        512
+      ],
+      "msrp": {
+        "256": 1353000,
+        "512": 1453000
+      },
+      "img": "./assets/img/devices/S25P.png"
+    },
+    {
+      "brand": "samsung",
+      "segment": "premium",
+      "code": "S25U",
+      "name": "Galaxy S25 Ultra",
+      "storages": [
+        256,
+        512
+      ],
+      "msrp": {
+        "256": 1698400,
+        "512": 1798400
+      },
+      "img": "./assets/img/devices/S25U.png"
+    },
+    {
+      "brand": "samsung",
+      "segment": "premium",
+      "code": "S25FE",
+      "name": "Galaxy S25 FE",
+      "storages": [
+        256
+      ],
+      "msrp": {
+        "256": 946000
+      },
+      "img": "./assets/img/devices/S25FE.png"
+    },
+    {
+      "brand": "samsung",
+      "segment": "premium",
+      "code": "FLIP7",
+      "name": "Galaxy Z Flip7",
+      "storages": [
+        256
+      ],
+      "msrp": {
+        "256": 1485000
+      },
+      "img": "./assets/img/devices/FLIP7.png"
+    },
+    {
+      "brand": "samsung",
+      "segment": "premium",
+      "code": "FOLD7",
+      "name": "Galaxy Z Fold7",
+      "storages": [
+        256
+      ],
+      "msrp": {
+        "256": 2379300
+      },
+      "img": "./assets/img/devices/FOLD7.png"
     },
     {
       "brand": "samsung",
@@ -56,7 +159,40 @@
       "msrp": {
         "default": 449900
       },
-      "img": "./assets/img/devices/JUMP4.svg"
+      "img": "./assets/img/devices/JUMP4.png"
+    },
+    {
+      "brand": "samsung",
+      "segment": "budget",
+      "code": "A36",
+      "name": "Galaxy A36",
+      "storages": [],
+      "msrp": {
+        "default": 499400
+      },
+      "img": "./assets/img/devices/A36.png"
+    },
+    {
+      "brand": "samsung",
+      "segment": "budget",
+      "code": "A17",
+      "name": "Galaxy A17 (LTE)",
+      "storages": [],
+      "msrp": {
+        "default": 319000
+      },
+      "img": "./assets/img/devices/A17.png"
+    },
+    {
+      "brand": "samsung",
+      "segment": "budget",
+      "code": "POMPOM",
+      "name": "폼폼푸린 키즈폰",
+      "storages": [],
+      "msrp": {
+        "default": 349800
+      },
+      "img": "./assets/img/devices/POMPOM.png"
     }
   ]
 }
