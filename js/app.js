@@ -24,9 +24,10 @@ function render(){
   const gs=gongsi[d.model]?.[st]?.[g]||0;
   const sp=special[d.model]?.[st]?.[g]||0;
   const final=d.prices[st]-gs-sp;
+  const img = d.image ? `images/${d.image}` : 'images/placeholder.png';
   list.innerHTML+=`
   <div class="product">
-    <div class="thumb"><img src="images/placeholder.png"></div>
+    <div class="thumb"><img src="${img}" alt="${d.model}"></div>
     <div class="info">
       <h3>${d.model}</h3>
       <div class="price">

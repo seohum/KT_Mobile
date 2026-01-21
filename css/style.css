@@ -4,7 +4,7 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo'
 .logo{color:#e60012;margin:0}
 .container{max-width:1200px;margin:20px auto;padding:0 16px}
 .product{display:flex;border:1px solid #ddd;border-radius:12px;padding:16px;margin-bottom:20px}
-.thumb img{width:120px}
+.thumb img{width:140px;height:auto}
 .info{flex:1;margin-left:16px}
 .info h3{margin:0 0 8px}
 .price .final{font-size:24px;color:#e60012;font-weight:bold}
