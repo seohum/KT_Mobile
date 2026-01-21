@@ -1,52 +1,32 @@
+let allPlans = [];
 
-document.addEventListener('DOMContentLoaded', init);
-let DEVICES=[],GONGSI={},SPECIAL={},ORDER={};
+fetch('plans.json')
+  .then(res => res.json())
+  .then(data => {
+    allPlans = data;
+    render(allPlans);
+  })
+  .catch(err => {
+    document.getElementById('app').innerHTML = '요금제 로딩 실패';
+    console.error(err);
+  });
 
-function storageLabel(s){return s==1024?'1TB':s+'GB';}
-function won(n){return n.toLocaleString()+'원';}
-
-async function init(){
-  DEVICES = (await (await fetch('./data/devices.json')).json()).devices;
-  GONGSI = await (await fetch('./data/gongsi.json')).json();
-  SPECIAL = await (await fetch('./data/special.json')).json();
-  ORDER = await (await fetch('./data/orderLink.json')).json();
-  bindTabs(); render('all');
+function render(list){
+  const app = document.getElementById('app');
+  app.innerHTML = '';
+  list.forEach(p => {
+    const div = document.createElement('div');
+    div.className = 'card';
+    div.innerHTML = `
+      <div><strong>${p.name}</strong></div>
+      <div>${p.data}</div>
+      <div class="price">${p.price.toLocaleString()}원</div>
+    `;
+    app.appendChild(div);
+  });
 }
 
-function bindTabs(){
- document.querySelectorAll('.tabs button').forEach(b=>{
-  b.onclick=()=>{
-   document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));
-   b.classList.add('active'); render(b.dataset.filter);
-  }
- });
-}
-
-function render(filter){
- const g=document.getElementById('deviceGrid'); g.innerHTML='';
- DEVICES.filter(d=>filter=='all'||d.brand==filter).forEach(d=>{
-  let s=d.storages[0],p=d.msrp[s];
-  let card=document.createElement('div'); card.className='card';
-  card.innerHTML=`
-   <img src="${d.img}">
-   <h3>${d.name}</h3>
-   <div id="price-${d.code}" class="price">${won(p)}</div>
-   ${d.storages.length>1?'<select id="st-'+d.code+'">'+d.storages.map(x=>`<option value="${x}">${storageLabel(x)}</option>`).join('')+'</select>':''}
-   <button onclick="order('${d.code}')">주문하기</button>
-  `;
-  g.appendChild(card);
-  if(d.storages.length>1){
-   document.getElementById('st-'+d.code).onchange=e=>{
-    let v=+e.target.value;
-    document.getElementById('price-'+d.code).innerText=won(d.msrp[v]);
-   }
-  }
- });
-}
-
-function order(code){
- const d=DEVICES.find(x=>x.code==code);
- let s=d.storages.length>1?+document.getElementById('st-'+code).value:d.storages[0];
- let url=ORDER.base+`?model=${encodeURIComponent(d.name)}&storage=${storageLabel(s)}&price=${d.msrp[s]}`;
- window.open(url,'_blank');
+function filterGroup(group){
+  if(group === 'ALL') return render(allPlans);
+  render(allPlans.filter(p => p.group === group));
 }
