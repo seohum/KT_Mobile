@@ -3,31 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KT 모바일 개통</title>
+<title>KT 모바일 공식몰 스타일</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h1>KT 모바일 개통</h1>
+<header class="header">
+  <div class="inner">
+    <h1 class="logo">KT 모바일</h1>
+  </div>
+</header>
 
-<h2>① 단말기</h2>
-<select id="deviceSelect"></select>
-<select id="storageSelect"></select>
+<main class="container">
+  <div id="productList"></div>
+</main>
 
-<h2>② 요금제</h2>
-<select id="planSelect"></select>
-
-<h2>③ 금액</h2>
-<div>공시지원금: <span id="gongsiEl"></span>원</div>
-<div>특판가: <span id="specialEl"></span>원</div>
-<div class="result">실구매가: <span id="finalPrice"></span>원</div>
-
-<button onclick="openOrder()">주문하기</button>
-
-<div id="modal" class="modal">
+<div id="orderModal" class="modal">
   <div class="modal-content">
     <h3>주문하기</h3>
-    <p id="orderSummary"></p>
-    <button onclick="closeOrder()">닫기</button>
+    <p id="orderText"></p>
+    <button onclick="closeModal()">닫기</button>
   </div>
 </div>
 
