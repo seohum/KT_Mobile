@@ -1,92 +1,16 @@
-{
-  "devices": [
-    {
-      "code": "IP17",
-      "brand": "iphone",
-      "name": "iPhone 17",
-      "storages": [
-        256,
-        512
-      ],
-      "msrp": {
-        "256": 1287000,
-        "512": 1437000
-      },
-      "img": "./assets/img/devices/IP17.png"
-    },
-    {
-      "code": "IP17P",
-      "brand": "iphone",
-      "name": "iPhone 17 Pro",
-      "storages": [
-        256,
-        512,
-        1024
-      ],
-      "msrp": {
-        "256": 1782000,
-        "512": 1932000,
-        "1024": 2232000
-      },
-      "img": "./assets/img/devices/IP17P.png"
-    },
-    {
-      "code": "IP17PM",
-      "brand": "iphone",
-      "name": "iPhone 17 Pro Max",
-      "storages": [
-        256,
-        512,
-        1024
-      ],
-      "msrp": {
-        "256": 1990000,
-        "512": 2140000,
-        "1024": 2440000
-      },
-      "img": "./assets/img/devices/IP17PM.png"
-    },
-    {
-      "code": "IPAIR",
-      "brand": "iphone",
-      "name": "iPhone Air",
-      "storages": [
-        256,
-        512,
-        1024
-      ],
-      "msrp": {
-        "256": 1584000,
-        "512": 1734000,
-        "1024": 2034000
-      },
-      "img": "./assets/img/devices/IPAIR.png"
-    },
-    {
-      "code": "FLIP7",
-      "brand": "samsung",
-      "name": "Galaxy Z Flip7",
-      "storages": [
-        256
-      ],
-      "msrp": {
-        "256": 1485000
-      },
-      "img": "./assets/img/devices/FLIP7.png"
-    },
-    {
-      "code": "FOLD7",
-      "brand": "samsung",
-      "name": "Galaxy Z Fold7",
-      "storages": [
-        256,
-        512
-      ],
-      "msrp": {
-        "256": 2379300,
-        "512": 2579300
-      },
-      "img": "./assets/img/devices/FOLD7.png"
+[
+  {
+    "brand": "APPLE",
+    "model": "iPhone 17 Pro",
+    "storages": [
+      "256GB",
+      "512GB",
+      "1TB"
+    ],
+    "prices": {
+      "256GB": 1782000,
+      "512GB": 1982000,
+      "1TB": 2282000
     }
-  ]
-}
+  }
+]
