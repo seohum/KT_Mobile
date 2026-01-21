@@ -1,18 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>KT 단말기 개통</title>
-<link rel="stylesheet" href="./assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KT Mobile 요금제</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Arial, sans-serif; margin: 0; padding: 16px; }
+    h1 { margin-bottom: 12px; }
+    .tabs button { margin-right: 8px; padding: 8px 12px; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-bottom: 10px; }
+    .price { font-weight: 700; }
+  </style>
 </head>
 <body>
-<div class="tabs">
-<button data-filter="all" class="active">전체</button>
-<button data-filter="iphone">아이폰</button>
-<button data-filter="samsung">삼성</button>
-</div>
-<div id="deviceGrid" class="grid"></div>
-<script src="./assets/js/app.js"></script>
+  <h1>KT Mobile 요금제</h1>
+  <div class="tabs">
+    <button onclick="filterGroup('ALL')">전체</button>
+    <button onclick="filterGroup('5G')">5G</button>
+    <button onclick="filterGroup('LTE')">LTE</button>
+    <button onclick="filterGroup('SENIOR')">시니어</button>
+  </div>
+  <div id="app"></div>
+  <script src="app.js"></script>
 </body>
 </html>
