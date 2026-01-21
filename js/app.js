@@ -5,7 +5,7 @@ Promise.all([
  fetch('data/plans.json').then(r=>r.json()),
  fetch('data/gongsi.json').then(r=>r.json()),
  fetch('data/special.json').then(r=>r.json())
-]).then(([d,p,g,s])=>{devices=d;plans=p;gongsi=g;special=s;init();});
+]).then(([d,p,g,s])=>{devices=d;plans=p;gongsi=g;special=s;render();});
 
 function planGroup(price){
  if(price>=110000)return'110K';
@@ -14,38 +14,37 @@ function planGroup(price){
  return'37K';
 }
 
-function init(){
- deviceSelect.innerHTML=devices.map((d,i)=>`<option value="${i}">${d.model}</option>`).join('');
- deviceSelect.onchange=updateStorage;
- updateStorage();
+function render(){
+ const list=document.getElementById('productList');
+ list.innerHTML='';
+ devices.forEach(d=>{
+  const st=d.storages[0];
+  const p=plans[0];
+  const g=planGroup(p.price);
+  const gs=gongsi[d.model]?.[st]?.[g]||0;
+  const sp=special[d.model]?.[st]?.[g]||0;
+  const final=d.prices[st]-gs-sp;
+  list.innerHTML+=`
+  <div class="product">
+    <div class="thumb"><img src="images/placeholder.png"></div>
+    <div class="info">
+      <h3>${d.model}</h3>
+      <div class="price">
+        <div>출고가 ${d.prices[st].toLocaleString()}원</div>
+        <div>공시지원금 -${gs.toLocaleString()}원</div>
+        <div>특판가 -${sp.toLocaleString()}원</div>
+        <div class="final">실구매가 ${final.toLocaleString()}원</div>
+      </div>
+      <button class="order-btn" onclick="openModal('${d.model}')">주문하기</button>
+    </div>
+  </div>`;
+ });
 }
 
-function updateStorage(){
- const d=devices[deviceSelect.value];
- storageSelect.innerHTML=d.storages.map(s=>`<option>${s}</option>`).join('');
- updatePlans();
+function openModal(text){
+ document.getElementById('orderText').innerText=text;
+ document.getElementById('orderModal').style.display='block';
 }
-
-function updatePlans(){
- planSelect.innerHTML=plans.map((p,i)=>`<option value="${i}">${p.name}</option>`).join('');
- planSelect.onchange=calc;
- calc();
+function closeModal(){
+ document.getElementById('orderModal').style.display='none';
 }
-
-function calc(){
- const d=devices[deviceSelect.value];
- const st=storageSelect.value;
- const p=plans[planSelect.value];
- const g=planGroup(p.price);
- const gs=gongsi[d.model]?.[st]?.[g]||0;
- const sp=special[d.model]?.[st]?.[g]||0;
- gongsiEl.innerText=gs.toLocaleString();
- specialEl.innerText=sp.toLocaleString();
- finalPrice.innerText=(d.prices[st]-gs-sp).toLocaleString();
-}
-
-function openOrder(){
- modal.style.display='block';
- orderSummary.innerText=`${deviceSelect.options[deviceSelect.selectedIndex].text} / ${storageSelect.value} / ${planSelect.options[planSelect.selectedIndex].text}`;
-}
-function closeOrder(){modal.style.display='none';}

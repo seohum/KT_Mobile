@@ -1,5 +1,13 @@
-body{font-family:Arial;padding:16px}
-select{padding:6px;margin:4px 0}
-.result{font-size:1.5em;font-weight:bold;color:#d00}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',Arial}
+.header{background:#fff;border-bottom:1px solid #e5e5e5}
+.header .inner{max-width:1200px;margin:auto;padding:16px}
+.logo{color:#e60012;margin:0}
+.container{max-width:1200px;margin:20px auto;padding:0 16px}
+.product{display:flex;border:1px solid #ddd;border-radius:12px;padding:16px;margin-bottom:20px}
+.thumb img{width:120px}
+.info{flex:1;margin-left:16px}
+.info h3{margin:0 0 8px}
+.price .final{font-size:24px;color:#e60012;font-weight:bold}
+.order-btn{margin-top:10px;background:#e60012;color:#fff;border:none;padding:12px;border-radius:8px}
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6)}
-.modal-content{background:#fff;padding:20px;margin:10% auto;width:80%}
+.modal-content{background:#fff;padding:20px;margin:15% auto;width:300px;border-radius:8px}
