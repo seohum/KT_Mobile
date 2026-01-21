@@ -1,0 +1,38 @@
+[
+  {
+    "name": "5G 슬림 4GB",
+    "price": 37000,
+    "data": "4GB",
+    "group": "5G"
+  },
+  {
+    "name": "5G 심플 30GB",
+    "price": 61000,
+    "data": "30GB",
+    "group": "5G"
+  },
+  {
+    "name": "5G 베이직",
+    "price": 80000,
+    "data": "무제한",
+    "group": "5G"
+  },
+  {
+    "name": "LTE 베이직",
+    "price": 33000,
+    "data": "1.4GB",
+    "group": "LTE"
+  },
+  {
+    "name": "시니어 요금제 (LTE)",
+    "price": 33000,
+    "data": "시니어 전용",
+    "group": "SENIOR"
+  },
+  {
+    "name": "시니어 요금제 (5G)",
+    "price": 45000,
+    "data": "시니어 전용",
+    "group": "SENIOR"
+  }
+]
