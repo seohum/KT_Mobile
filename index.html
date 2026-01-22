@@ -7,14 +7,25 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header><h1>KT 모바일 스토어</h1></header>
-<section id="list"></section>
+<header class="header">KT 모바일 스토어</header>
+<section id="deviceList" class="list"></section>
 
-<div id="modal" class="modal">
+<div id="applyModal" class="modal">
   <div class="modal-box">
-    <h3>주문하기</h3>
-    <pre id="summary"></pre>
-    <button onclick="closeModal()">닫기</button>
+    <h3 id="applyTitle"></h3>
+    <div class="price-box">
+      <p>출고가 <strong id="basePrice"></strong>원</p>
+      <p>공시지원금 <strong id="gongsiPrice"></strong>원</p>
+      <p class="final">실구매가 <strong id="finalPrice"></strong>원</p>
+    </div>
+    <div class="join-type-box">
+      <button class="join-btn active">신규가입</button>
+      <button class="join-btn">번호이동</button>
+      <button class="join-btn">기기변경</button>
+    </div>
+    <p class="notice">※ 번호이동 / 특판 / 추가지원 정책은 상담으로 안내드립니다.</p>
+    <a href="tel:01088713121" class="btn primary">📞 상담 신청하기</a>
+    <button class="close" onclick="closeApply()">닫기</button>
   </div>
 </div>
 
