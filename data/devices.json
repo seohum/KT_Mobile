@@ -3,18 +3,28 @@
     "model": "iPhone 17 Pro",
     "storage": "256GB",
     "base": 1782000,
-    "gongsi": 550000
+    "gongsi": 550000,
+    "image": "iphone17pro.png"
   },
   {
     "model": "iPhone 17 Pro",
     "storage": "512GB",
     "base": 1982000,
-    "gongsi": 550000
+    "gongsi": 550000,
+    "image": "iphone17pro.png"
   },
   {
-    "model": "iPhone 17 Pro",
-    "storage": "1TB",
-    "base": 2282000,
-    "gongsi": 550000
+    "model": "Galaxy S25",
+    "storage": "256GB",
+    "base": 1155000,
+    "gongsi": 600000,
+    "image": "galaxys25.png"
+  },
+  {
+    "model": "Galaxy S25 Ultra",
+    "storage": "256GB",
+    "base": 1698400,
+    "gongsi": 600000,
+    "image": "galaxys25ultra.png"
   }
 ]

@@ -1,11 +1,16 @@
 
-body{margin:0;font-family:Arial}
-.header{padding:16px;font-weight:700;border-bottom:1px solid #ddd}
+body{margin:0;font-family:Arial;background:#fafafa}
+.header{padding:20px;border-bottom:1px solid #ddd;background:#fff}
+.header h1{margin:0}
+.section-title{padding:16px;font-weight:700}
 .list{padding:16px}
-.card{border:1px solid #ddd;border-radius:10px;padding:12px;margin-bottom:12px}
+.card{background:#fff;border:1px solid #ddd;border-radius:10px;padding:12px;margin-bottom:12px}
+.card img{width:100%;max-width:180px;margin:0 auto;display:block}
 .price{color:#e60012;font-weight:700}
+
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);justify-content:center;align-items:center}
 .modal-box{background:#fff;width:90%;max-width:420px;border-radius:12px;padding:20px}
+.apply-img{width:160px;display:block;margin:0 auto 10px}
 .final{color:#e60012;font-size:22px;font-weight:700}
 .join-type-box{display:flex;gap:8px;margin:12px 0}
 .join-btn{flex:1;padding:10px;border:1px solid #ddd;border-radius:6px;background:#fff}
