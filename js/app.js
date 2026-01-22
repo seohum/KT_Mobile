@@ -1,51 +1,32 @@
-let devices=[],plans=[],gongsi={},special={};
+let devices=[];
 
-Promise.all([
- fetch('data/devices.json').then(r=>r.json()),
- fetch('data/plans.json').then(r=>r.json()),
- fetch('data/gongsi.json').then(r=>r.json()),
- fetch('data/special.json').then(r=>r.json())
-]).then(([d,p,g,s])=>{devices=d;plans=p;gongsi=g;special=s;render();});
-
-function planGroup(price){
- if(price>=110000)return'110K';
- if(price>=90000)return'90K';
- if(price>=61000)return'61K';
- return'37K';
-}
+fetch('data/devices.json')
+ .then(r=>r.json())
+ .then(d=>{devices=d;render();});
 
 function render(){
- const list=document.getElementById('productList');
+ const list=document.getElementById('list');
  list.innerHTML='';
- devices.forEach(d=>{
-  const st=d.storages[0];
-  const p=plans[0];
-  const g=planGroup(p.price);
-  const gs=gongsi[d.model]?.[st]?.[g]||0;
-  const sp=special[d.model]?.[st]?.[g]||0;
-  const final=d.prices[st]-gs-sp;
-  const img = d.image ? `images/${d.image}` : 'images/placeholder.png';
-  list.innerHTML+=`
-  <div class="product">
-    <div class="thumb"><img src="${img}" alt="${d.model}"></div>
-    <div class="info">
-      <h3>${d.model}</h3>
-      <div class="price">
-        <div>출고가 ${d.prices[st].toLocaleString()}원</div>
-        <div>공시지원금 -${gs.toLocaleString()}원</div>
-        <div>특판가 -${sp.toLocaleString()}원</div>
-        <div class="final">실구매가 ${final.toLocaleString()}원</div>
-      </div>
-      <button class="order-btn" onclick="openModal('${d.model}')">주문하기</button>
-    </div>
-  </div>`;
+ devices.forEach(dev=>{
+  dev.storages.forEach(st=>{
+   const price=dev.prices[st];
+   list.innerHTML+=`
+   <div class="card">
+     <img src="images/${dev.image||'placeholder.png'}">
+     <div class="info">
+       <h3>${dev.model} (${st})</h3>
+       <div>출고가 ${price.toLocaleString()}원</div>
+       <div class="price">실구매가 ${price.toLocaleString()}원</div>
+       <button onclick="order('${dev.model}','${st}',${price})">주문하기</button>
+     </div>
+   </div>`;
+  });
  });
 }
 
-function openModal(text){
- document.getElementById('orderText').innerText=text;
- document.getElementById('orderModal').style.display='block';
+function order(m,s,p){
+ document.getElementById('summary').innerText=
+  `단말기: ${m}\n용량: ${s}\n출고가: ${p.toLocaleString()}원`;
+ document.getElementById('modal').style.display='block';
 }
-function closeModal(){
- document.getElementById('orderModal').style.display='none';
-}
+function closeModal(){document.getElementById('modal').style.display='none';}
