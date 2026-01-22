@@ -1,13 +1,8 @@
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',Arial}
-.header{background:#fff;border-bottom:1px solid #e5e5e5}
-.header .inner{max-width:1200px;margin:auto;padding:16px}
-.logo{color:#e60012;margin:0}
-.container{max-width:1200px;margin:20px auto;padding:0 16px}
-.product{display:flex;border:1px solid #ddd;border-radius:12px;padding:16px;margin-bottom:20px}
-.thumb img{width:140px;height:auto}
-.info{flex:1;margin-left:16px}
-.info h3{margin:0 0 8px}
-.price .final{font-size:24px;color:#e60012;font-weight:bold}
-.order-btn{margin-top:10px;background:#e60012;color:#fff;border:none;padding:12px;border-radius:8px}
+body{font-family:Arial;margin:0}
+header{padding:16px;border-bottom:1px solid #ddd}
+.card{border:1px solid #ddd;border-radius:10px;padding:12px;margin:12px;display:flex}
+.card img{width:120px}
+.info{margin-left:12px;flex:1}
+.price{color:#e60012;font-size:22px;font-weight:bold}
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6)}
-.modal-content{background:#fff;padding:20px;margin:15% auto;width:300px;border-radius:8px}
+.modal-box{background:#fff;padding:20px;width:300px;margin:15% auto;border-radius:8px}
