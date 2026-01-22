@@ -3,24 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KT 모바일 공식몰 스타일</title>
+<title>KT 모바일 스토어</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="header">
-  <div class="inner">
-    <h1 class="logo">KT 모바일</h1>
-  </div>
-</header>
+<header><h1>KT 모바일 스토어</h1></header>
+<section id="list"></section>
 
-<main class="container">
-  <div id="productList"></div>
-</main>
-
-<div id="orderModal" class="modal">
-  <div class="modal-content">
+<div id="modal" class="modal">
+  <div class="modal-box">
     <h3>주문하기</h3>
-    <p id="orderText"></p>
+    <pre id="summary"></pre>
     <button onclick="closeModal()">닫기</button>
   </div>
 </div>
