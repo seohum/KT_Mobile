@@ -1,5 +1,12 @@
 [
   {
+    "model": "iPhone 17",
+    "storage": "256GB",
+    "base": 1287000,
+    "gongsi": 550000,
+    "image": "iphone17.png"
+  },
+  {
     "model": "iPhone 17 Pro",
     "storage": "256GB",
     "base": 1782000,
@@ -7,11 +14,11 @@
     "image": "iphone17pro.png"
   },
   {
-    "model": "iPhone 17 Pro",
-    "storage": "512GB",
-    "base": 1982000,
-    "gongsi": 550000,
-    "image": "iphone17pro.png"
+    "model": "iPhone 17 Pro Max",
+    "storage": "256GB",
+    "base": 1990000,
+    "gongsi": 150000,
+    "image": "iphone17promax.png"
   },
   {
     "model": "Galaxy S25",
@@ -26,5 +33,19 @@
     "base": 1698400,
     "gongsi": 600000,
     "image": "galaxys25ultra.png"
+  },
+  {
+    "model": "Galaxy Z Flip7",
+    "storage": "256GB",
+    "base": 1485000,
+    "gongsi": 600000,
+    "image": "flip7.png"
+  },
+  {
+    "model": "Galaxy Z Fold7",
+    "storage": "256GB",
+    "base": 2379300,
+    "gongsi": 600000,
+    "image": "fold7.png"
   }
 ]

@@ -1,6 +1,32 @@
 [
   {
-    "name": "ON톡 플러스",
-    "price": 49000
+    "name": "5G 슬림",
+    "price": 37000,
+    "data": "5GB"
+  },
+  {
+    "name": "5G 베이직",
+    "price": 61000,
+    "data": "100GB"
+  },
+  {
+    "name": "5G 스페셜",
+    "price": 90000,
+    "data": "무제한"
+  },
+  {
+    "name": "LTE 베이직",
+    "price": 33000,
+    "data": "5GB"
+  },
+  {
+    "name": "ON 톡 플러스",
+    "price": 49000,
+    "data": "무제한 톡/데이터"
+  },
+  {
+    "name": "ON 프리미엄",
+    "price": 89000,
+    "data": "무제한"
   }
 ]
