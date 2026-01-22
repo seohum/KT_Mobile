@@ -13,5 +13,18 @@
       "512GB": 1982000,
       "1TB": 2282000
     }
+  },
+  {
+    "brand": "SAMSUNG",
+    "model": "Galaxy Z Fold7",
+    "image": "zfold7.png",
+    "storages": [
+      "256GB",
+      "512GB"
+    ],
+    "prices": {
+      "256GB": 2379300,
+      "512GB": 2579300
+    }
   }
 ]
