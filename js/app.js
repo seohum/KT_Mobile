@@ -204,23 +204,24 @@ buildGroups();
 
 init();
 
-// === Policy tab toggle (safe add) ===
+
+// === Policy select inside condition ===
 document.addEventListener('DOMContentLoaded', function(){
-  const btnW = document.getElementById('btn-wired');
-  const btnWL = document.getElementById('btn-wireless');
-  const wireless = document.getElementById('wireless-section');
+  const wiredBtn = document.getElementById('policy-wired');
+  const wirelessBtn = document.getElementById('policy-wireless');
+  const wirelessUI = document.getElementById('wireless-ui');
 
-  if(!btnW || !btnWL || !wireless) return;
+  if(!wiredBtn || !wirelessBtn || !wirelessUI) return;
 
-  btnW.onclick = function(){
-    btnW.classList.add('active');
-    btnWL.classList.remove('active');
-    wireless.style.display = 'none';
+  wiredBtn.onclick = function(){
+    wiredBtn.classList.add('active');
+    wirelessBtn.classList.remove('active');
+    wirelessUI.style.display = 'none';
   };
 
-  btnWL.onclick = function(){
-    btnWL.classList.add('active');
-    btnW.classList.remove('active');
-    wireless.style.display = 'block';
+  wirelessBtn.onclick = function(){
+    wirelessBtn.classList.add('active');
+    wiredBtn.classList.remove('active');
+    wirelessUI.style.display = 'block';
   };
 });
