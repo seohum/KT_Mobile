@@ -1,4 +1,7 @@
 let POLICY=null;
+let WIRELESS=null;
+let policyType='wired';
+let wirelessState={network:null, join:null, brand:null, tier:null, modelCode:null};
 
 const $ = (id)=>document.getElementById(id);
 
@@ -6,65 +9,22 @@ function money(v){
   if(v===null || v===undefined || v==="") return "-";
   const n = Number(v);
   if(Number.isNaN(n)) return String(v);
-  return n.toLocaleString("ko-KR")+"원";
+  return (n/10000).toLocaleString("ko-KR")+"만원";
 }
 
 function uniq(arr){ return [...new Set(arr.filter(v=>v!==null && v!==undefined && v!==""))]; }
 
-
-function normStr(v){
-  if(v===null || v===undefined) return null;
-  const s = String(v).replace(/\s+/g,"");
-  return s===""? null : s;
-}
-function normGroup(g){
-  const s = normStr(g);
-  if(!s) return null;
-  if(s==="I" || s==="I단품") return "I단품";
-  return s;
-}
-function canonGroupForUI(g){
-  const s = normGroup(g);
-  if(!s) return null;
-  if(s==="I단품") return "I 단품";
-  return s;
-}
-function eqOrAny(policyVal, selectedVal){
-  if(policyVal===null || policyVal===undefined || policyVal==="") return true;
-  return normStr(policyVal) === normStr(selectedVal);
-}
-function eqTv(policyTv, selectedTv){
-  if(policyTv===null || policyTv===undefined || policyTv==="") return true;
-  return normStr(policyTv) === normStr(selectedTv);
-}
-function normalizePolicy(){
-  POLICY.wired_table.forEach(r=>{
-    r.group = normGroup(r.group);
-    r.internet = normStr(r.internet);
-    r.tv = normStr(r.tv);
-  });
-  POLICY.uit_table.forEach(r=>{
-    r.group = normGroup(r.group);
-    r.internet = normStr(r.internet);
-    r.tv = normStr(r.tv);
-    r.mobile_tier = normStr(r.mobile_tier);
-  });
-}
-
 function buildGroups(){
-  const raw = uniq([
+  const ORDERED_GROUPS = ['I 단품','I+T','M+I','U+I','M+I+T','U+I+T'];
+  const LABEL = {'I 단품':'인터넷 단독'};
+
+  const groups = uniq([
     ...POLICY.wired_table.map(r=>r.group),
     ...POLICY.uit_table.map(r=>r.group)
   ]);
-  const groups = uniq(
-    raw
-      .filter(g=>g && !String(g).includes("정책") && String(g)!=="구분")
-      .map(g=>canonGroupForUI(g))
-  );
-
   const wrap = $("groupBtns");
   wrap.innerHTML="";
-  groups.forEach((g,idx)=>{
+  sorted.forEach((g,idx)=>{
     const b=document.createElement("button");
     b.className="btn"+(idx===0?" on":"");
     b.textContent=g;
@@ -88,7 +48,7 @@ function refreshSelectors(){
   const isUIT = POLICY.uit_table.some(r=>r.group===g);
   $("mobileTierRow").style.display = isUIT ? "" : "none";
 
-  const table = isUIT ? POLICY.uit_table.filter(r=>r.group===normGroup(g)) : POLICY.wired_table.filter(r=>r.group===normGroup(g));
+  const table = isUIT ? POLICY.uit_table.filter(r=>r.group===g) : POLICY.wired_table.filter(r=>r.group===g);
 
   const internetList = uniq(table.map(r=>r.internet));
   $("internetSel").innerHTML = internetList.map(v=>`<option value="${v}">${v}</option>`).join("");
@@ -123,10 +83,10 @@ function findRow(){
   const isUIT = POLICY.uit_table.some(r=>r.group===g);
   if(isUIT){
     const tier=$("mobileTierSel").value;
-    const rows = POLICY.uit_table.filter(r=>r.group===normGroup(g) && eqOrAny(r.internet, internet) && eqTv(r.tv, tv) && eqOrAny(r.mobile_tier, tier));
+    const rows = POLICY.uit_table.filter(r=>r.group===g && r.internet===internet && (r.tv||null)===(tv||null) && r.mobile_tier===tier);
     return rows[0] || null;
   }else{
-    const rows = POLICY.wired_table.filter(r=>r.group===normGroup(g) && eqOrAny(r.internet, internet) && eqTv(r.tv, tv));
+    const rows = POLICY.wired_table.filter(r=>r.group===g && r.internet===internet && (r.tv||null)===(tv||null));
     return rows[0] || null;
   }
 }
@@ -165,12 +125,14 @@ function calc(){
 }
 
 async function init(){
-  const res = await fetch("data/wired_policy.json");
+  $('tabWired').addEventListener('click', ()=>setActiveTab('wired'));
+  $('tabWireless').addEventListener('click', ()=>{ setActiveTab('wireless'); initWireless(); });
+  setActiveTab('wired');
+
+  const res = await fetch("data/wired/policy.json");
   POLICY = await res.json();
 
-  
-  normalizePolicy();
-buildGroups();
+  buildGroups();
   refreshSelectors();
 
   $("internetSel").addEventListener("change", calc);
@@ -203,3 +165,126 @@ buildGroups();
 }
 
 init();
+
+function setActiveTab(type){
+  policyType = type;
+  const wiredTab = $("tabWired");
+  const wirelessTab = $("tabWireless");
+  const wiredPanel = $("wiredPanel");
+  const wirelessPanel = $("wirelessPanel");
+  if(type==="wired"){
+    wiredTab.classList.add("active");
+    wirelessTab.classList.remove("active");
+    wiredPanel.style.display = "";
+    wirelessPanel.style.display = "none";
+  }else{
+    wiredTab.classList.remove("active");
+    wirelessTab.classList.add("active");
+    wiredPanel.style.display = "none";
+    wirelessPanel.style.display = "";
+  }
+}
+
+function renderBtnGroup(containerId, items, activeKey, onClick){
+  const el = $(containerId);
+  el.innerHTML = "";
+  items.forEach(it=>{
+    const b = document.createElement("button");
+    b.type="button";
+    b.className = "btn" + (it.key===activeKey ? " active" : "");
+    if(it.img!==undefined){
+      const img=document.createElement("img");
+      img.alt = it.label + " 로고";
+      img.src = it.img || "";
+      if(!it.img) img.style.display="none";
+      b.appendChild(img);
+    }
+    const span=document.createElement("span");
+    span.textContent=it.label;
+    b.appendChild(span);
+    b.addEventListener("click", ()=>onClick(it.key));
+    el.appendChild(b);
+  });
+}
+
+function initWirelessButtons(){
+  renderBtnGroup("wirelessNetworkBtns", [
+    {key:"5g", label:"5G"},
+    {key:"lte", label:"LTE"},
+  ], wirelessState.network, (k)=>{ wirelessState.network=k; refreshWireless(); });
+
+  renderBtnGroup("wirelessJoinBtns", [
+    {key:"new", label:"신규"},
+    {key:"change", label:"기변"},
+    {key:"mnp", label:"번호이동(MNP)"},
+  ], wirelessState.join, (k)=>{ wirelessState.join=k; refreshWireless(); });
+
+  renderBtnGroup("wirelessBrandBtns", [
+    {key:"samsung", label:"삼성", img:""},
+    {key:"apple", label:"애플", img:""},
+  ], wirelessState.brand, (k)=>{ wirelessState.brand=k; refreshWireless(); });
+}
+
+function initWireless(){
+  if(!WIRELESS) return;
+  if(!wirelessState.network) wirelessState.network="5g";
+  if(!wirelessState.join) wirelessState.join="new";
+  if(!wirelessState.brand) wirelessState.brand="samsung";
+  if(!wirelessState.tier) wirelessState.tier=WIRELESS.meta.tiers[0]?.key || "110";
+
+  initWirelessButtons();
+
+  const tierSel=$("wirelessTierSel");
+  tierSel.innerHTML="";
+  WIRELESS.meta.tiers.forEach(t=>{
+    const o=document.createElement("option");
+    o.value=t.key;
+    o.textContent=t.label;
+    tierSel.appendChild(o);
+  });
+  tierSel.value=wirelessState.tier;
+  tierSel.addEventListener("change", ()=>{ wirelessState.tier=tierSel.value; refreshWireless(); });
+
+  $("wirelessModelSel").addEventListener("change", (e)=>{ wirelessState.modelCode=e.target.value; refreshWireless(); });
+
+  refreshWireless();
+}
+
+function refreshWireless(){
+  initWirelessButtons();
+
+  const tierSel=$("wirelessTierSel");
+  tierSel.value=wirelessState.tier;
+
+  const sel=$("wirelessModelSel");
+  const models = WIRELESS.models
+    .filter(m=>m.network===wirelessState.network)
+    .filter(m=>wirelessState.brand ? m.brand===wirelessState.brand : true);
+
+  sel.innerHTML="";
+  const ph=document.createElement("option");
+  ph.value="";
+  ph.textContent="모델 선택";
+  sel.appendChild(ph);
+
+  models.forEach(m=>{
+    const o=document.createElement("option");
+    o.value=m.model_code;
+    o.textContent = m.name + (m.model_code ? ` (${m.model_code})` : "");
+    sel.appendChild(o);
+  });
+
+  if(wirelessState.modelCode && !models.some(m=>m.model_code===wirelessState.modelCode)){
+    wirelessState.modelCode="";
+  }
+  sel.value=wirelessState.modelCode || "";
+
+  let amt=null;
+  if(wirelessState.modelCode){
+    const m=models.find(x=>x.model_code===wirelessState.modelCode);
+    if(m && m.amounts && m.amounts[wirelessState.tier]){
+      amt=m.amounts[wirelessState.tier][wirelessState.join];
+    }
+  }
+  $("wirelessPolicyAmt").textContent = money(amt);
+}

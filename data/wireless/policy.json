@@ -1,0 +1,1116 @@
+{
+  "meta": {
+    "tiers": [
+      {
+        "key": "110",
+        "label": "110K이상"
+      },
+      {
+        "key": "90",
+        "label": "90K이상"
+      },
+      {
+        "key": "61",
+        "label": "61K이상"
+      },
+      {
+        "key": "37",
+        "label": "37K이상"
+      }
+    ]
+  },
+  "models": [
+    {
+      "network": "5g",
+      "brand": "apple",
+      "name": "아이폰 17(P,PM)",
+      "model_code": "AIP17(P,PM)",
+      "amounts": {
+        "110": {
+          "new": 340000,
+          "mnp": 340000,
+          "change": 230000
+        },
+        "90": {
+          "new": 310000,
+          "mnp": 310000,
+          "change": 200000
+        },
+        "61": {
+          "new": 230000,
+          "mnp": 180000,
+          "change": 80000
+        },
+        "37": {
+          "new": 140000,
+          "mnp": 140000,
+          "change": 50000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "apple",
+      "name": "아이폰 Air",
+      "model_code": "AIPA",
+      "amounts": {
+        "110": {
+          "new": 340000,
+          "mnp": 340000,
+          "change": 230000
+        },
+        "90": {
+          "new": 310000,
+          "mnp": 310000,
+          "change": 200000
+        },
+        "61": {
+          "new": 230000,
+          "mnp": 180000,
+          "change": 80000
+        },
+        "37": {
+          "new": 140000,
+          "mnp": 140000,
+          "change": 50000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "samsung",
+      "name": "갤럭시 Z Fold7",
+      "model_code": "SM-F966NK",
+      "amounts": {
+        "110": {
+          "new": 380000,
+          "mnp": 380000,
+          "change": 320000
+        },
+        "90": {
+          "new": 350000,
+          "mnp": 350000,
+          "change": 290000
+        },
+        "61": {
+          "new": 320000,
+          "mnp": 270000,
+          "change": 170000
+        },
+        "37": {
+          "new": 230000,
+          "mnp": 230000,
+          "change": 140000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "samsung",
+      "name": "갤럭시 Z Flip7",
+      "model_code": "SM-F766NK(O)",
+      "amounts": {
+        "110": {
+          "new": 380000,
+          "mnp": 380000,
+          "change": 320000
+        },
+        "90": {
+          "new": 350000,
+          "mnp": 350000,
+          "change": 290000
+        },
+        "61": {
+          "new": 320000,
+          "mnp": 270000,
+          "change": 170000
+        },
+        "37": {
+          "new": 230000,
+          "mnp": 230000,
+          "change": 140000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "SM-F766NK(O)512G",
+      "model_code": "SM-F766NK(O)512G",
+      "amounts": {
+        "110": {
+          "new": 460000,
+          "mnp": 460000,
+          "change": 400000
+        },
+        "90": {
+          "new": 430000,
+          "mnp": 430000,
+          "change": 370000
+        },
+        "61": {
+          "new": 400000,
+          "mnp": 350000,
+          "change": 250000
+        },
+        "37": {
+          "new": 310000,
+          "mnp": 310000,
+          "change": 220000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "samsung",
+      "name": "갤럭시 S25엣지",
+      "model_code": "SM-S937NK(O)",
+      "amounts": {
+        "110": {
+          "new": 490000,
+          "mnp": 490000,
+          "change": 430000
+        },
+        "90": {
+          "new": 460000,
+          "mnp": 460000,
+          "change": 400000
+        },
+        "61": {
+          "new": 430000,
+          "mnp": 380000,
+          "change": 280000
+        },
+        "37": {
+          "new": 340000,
+          "mnp": 340000,
+          "change": 250000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "SM-S937NK(O)512G",
+      "model_code": "SM-S937NK(O)512G",
+      "amounts": {
+        "110": {
+          "new": 630000,
+          "mnp": 630000,
+          "change": 570000
+        },
+        "90": {
+          "new": 600000,
+          "mnp": 600000,
+          "change": 540000
+        },
+        "61": {
+          "new": 570000,
+          "mnp": 520000,
+          "change": 420000
+        },
+        "37": {
+          "new": 480000,
+          "mnp": 480000,
+          "change": 390000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "samsung",
+      "name": "갤럭시S25",
+      "model_code": "SM-S931(8)NK(O)_256G",
+      "amounts": {
+        "110": {
+          "new": 440000,
+          "mnp": 440000,
+          "change": 380000
+        },
+        "90": {
+          "new": 410000,
+          "mnp": 410000,
+          "change": 350000
+        },
+        "61": {
+          "new": 380000,
+          "mnp": 330000,
+          "change": 230000
+        },
+        "37": {
+          "new": 290000,
+          "mnp": 290000,
+          "change": 200000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "SM-S931(8)NK(O)_512G",
+      "model_code": "SM-S931(8)NK(O)_512G",
+      "amounts": {
+        "110": {
+          "new": 440000,
+          "mnp": 440000,
+          "change": 380000
+        },
+        "90": {
+          "new": 410000,
+          "mnp": 410000,
+          "change": 350000
+        },
+        "61": {
+          "new": 380000,
+          "mnp": 330000,
+          "change": 230000
+        },
+        "37": {
+          "new": 290000,
+          "mnp": 290000,
+          "change": 200000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "samsung",
+      "name": "갤럭시S25 Plus",
+      "model_code": "SM-S936NK(O)_256G",
+      "amounts": {
+        "110": {
+          "new": 440000,
+          "mnp": 440000,
+          "change": 380000
+        },
+        "90": {
+          "new": 410000,
+          "mnp": 410000,
+          "change": 350000
+        },
+        "61": {
+          "new": 380000,
+          "mnp": 330000,
+          "change": 230000
+        },
+        "37": {
+          "new": 290000,
+          "mnp": 290000,
+          "change": 200000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "SM-S936NK(O)_512G",
+      "model_code": "SM-S936NK(O)_512G",
+      "amounts": {
+        "110": {
+          "new": 440000,
+          "mnp": 440000,
+          "change": 380000
+        },
+        "90": {
+          "new": 410000,
+          "mnp": 410000,
+          "change": 350000
+        },
+        "61": {
+          "new": 380000,
+          "mnp": 330000,
+          "change": 230000
+        },
+        "37": {
+          "new": 290000,
+          "mnp": 290000,
+          "change": 200000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "apple",
+      "name": "아이폰16Pro(Max)",
+      "model_code": "AIP16P(M)",
+      "amounts": {
+        "110": {
+          "new": 340000,
+          "mnp": 290000,
+          "change": 180000
+        },
+        "90": {
+          "new": 310000,
+          "mnp": 260000,
+          "change": 150000
+        },
+        "61": {
+          "new": 180000,
+          "mnp": 130000,
+          "change": 30000
+        },
+        "37": {
+          "new": 90000,
+          "mnp": 90000,
+          "change": 0
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "apple",
+      "name": "아이폰16(Plus)",
+      "model_code": "AIP16(PS)",
+      "amounts": {
+        "110": {
+          "new": 340000,
+          "mnp": 290000,
+          "change": 180000
+        },
+        "90": {
+          "new": 310000,
+          "mnp": 260000,
+          "change": 150000
+        },
+        "61": {
+          "new": 180000,
+          "mnp": 130000,
+          "change": 30000
+        },
+        "37": {
+          "new": 90000,
+          "mnp": 90000,
+          "change": 0
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "갤Z폴드6",
+      "model_code": "SM-F956NK",
+      "amounts": {
+        "110": {
+          "new": 450000,
+          "mnp": 550000,
+          "change": 490000
+        },
+        "90": {
+          "new": 420000,
+          "mnp": 520000,
+          "change": 460000
+        },
+        "61": {
+          "new": 330000,
+          "mnp": 280000,
+          "change": 230000
+        },
+        "37": {
+          "new": 240000,
+          "mnp": 240000,
+          "change": 200000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "갤Z폴드6",
+      "model_code": "SM-F956NK_512G",
+      "amounts": {
+        "110": {
+          "new": 550000,
+          "mnp": 650000,
+          "change": 590000
+        },
+        "90": {
+          "new": 520000,
+          "mnp": 620000,
+          "change": 560000
+        },
+        "61": {
+          "new": 430000,
+          "mnp": 380000,
+          "change": 330000
+        },
+        "37": {
+          "new": 340000,
+          "mnp": 340000,
+          "change": 300000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "갤Z플립6",
+      "model_code": "SM-F741NK",
+      "amounts": {
+        "110": {
+          "new": 450000,
+          "mnp": 550000,
+          "change": 490000
+        },
+        "90": {
+          "new": 420000,
+          "mnp": 520000,
+          "change": 460000
+        },
+        "61": {
+          "new": 330000,
+          "mnp": 280000,
+          "change": 230000
+        },
+        "37": {
+          "new": 240000,
+          "mnp": 240000,
+          "change": 200000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "갤Z플립6",
+      "model_code": "SM-F741NK_512G",
+      "amounts": {
+        "110": {
+          "new": 550000,
+          "mnp": 650000,
+          "change": 590000
+        },
+        "90": {
+          "new": 520000,
+          "mnp": 620000,
+          "change": 560000
+        },
+        "61": {
+          "new": 430000,
+          "mnp": 380000,
+          "change": 330000
+        },
+        "37": {
+          "new": 340000,
+          "mnp": 340000,
+          "change": 300000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "갤S24",
+      "model_code": "SM-S921NK",
+      "amounts": {
+        "110": {
+          "new": 480000,
+          "mnp": 530000,
+          "change": 420000
+        },
+        "90": {
+          "new": 450000,
+          "mnp": 500000,
+          "change": 390000
+        },
+        "61": {
+          "new": 280000,
+          "mnp": 280000,
+          "change": 180000
+        },
+        "37": {
+          "new": 240000,
+          "mnp": 240000,
+          "change": 150000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "갤S24",
+      "model_code": "SM-S926(8)NK",
+      "amounts": {
+        "110": {
+          "new": 440000,
+          "mnp": 490000,
+          "change": 380000
+        },
+        "90": {
+          "new": 410000,
+          "mnp": 460000,
+          "change": 350000
+        },
+        "61": {
+          "new": 240000,
+          "mnp": 240000,
+          "change": 140000
+        },
+        "37": {
+          "new": 200000,
+          "mnp": 200000,
+          "change": 110000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "apple",
+      "name": "아이폰15",
+      "model_code": "AIP15P(M)",
+      "amounts": {
+        "110": {
+          "new": 290000,
+          "mnp": 390000,
+          "change": 280000
+        },
+        "90": {
+          "new": 260000,
+          "mnp": 360000,
+          "change": 250000
+        },
+        "61": {
+          "new": 130000,
+          "mnp": 130000,
+          "change": 30000
+        },
+        "37": {
+          "new": 90000,
+          "mnp": 90000,
+          "change": 0
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "AIP15(PS)",
+      "model_code": "AIP15(PS)",
+      "amounts": {
+        "110": {
+          "new": 290000,
+          "mnp": 390000,
+          "change": 280000
+        },
+        "90": {
+          "new": 260000,
+          "mnp": 360000,
+          "change": 250000
+        },
+        "61": {
+          "new": 130000,
+          "mnp": 130000,
+          "change": 30000
+        },
+        "37": {
+          "new": 90000,
+          "mnp": 90000,
+          "change": 0
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "apple",
+      "name": "아이폰16e",
+      "model_code": "AIP16E",
+      "amounts": {
+        "110": {
+          "new": 240000,
+          "mnp": 320000,
+          "change": 220000
+        },
+        "90": {
+          "new": 210000,
+          "mnp": 290000,
+          "change": 190000
+        },
+        "61": {
+          "new": 180000,
+          "mnp": 260000,
+          "change": 150000
+        },
+        "37": {
+          "new": 90000,
+          "mnp": 90000,
+          "change": 0
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "갤Z플립7 FE",
+      "model_code": "SM-F761NK",
+      "amounts": {
+        "110": {
+          "new": 240000,
+          "mnp": 320000,
+          "change": 220000
+        },
+        "90": {
+          "new": 210000,
+          "mnp": 290000,
+          "change": 190000
+        },
+        "61": {
+          "new": 180000,
+          "mnp": 260000,
+          "change": 150000
+        },
+        "37": {
+          "new": 90000,
+          "mnp": 90000,
+          "change": 0
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "갤S25FE",
+      "model_code": "SM-S731NK(O)",
+      "amounts": {
+        "110": {
+          "new": 240000,
+          "mnp": 270000,
+          "change": 170000
+        },
+        "90": {
+          "new": 210000,
+          "mnp": 240000,
+          "change": 140000
+        },
+        "61": {
+          "new": 180000,
+          "mnp": 210000,
+          "change": 100000
+        },
+        "37": {
+          "new": 90000,
+          "mnp": 90000,
+          "change": 0
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "갤S24FE",
+      "model_code": "SM-S721NK",
+      "amounts": {
+        "110": {
+          "new": 190000,
+          "mnp": 270000,
+          "change": 170000
+        },
+        "90": {
+          "new": 160000,
+          "mnp": 240000,
+          "change": 140000
+        },
+        "61": {
+          "new": 130000,
+          "mnp": 210000,
+          "change": 100000
+        },
+        "37": {
+          "new": 90000,
+          "mnp": 90000,
+          "change": 0
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "apple",
+      "name": "아이폰13",
+      "model_code": "AIP13-128",
+      "amounts": {
+        "110": {
+          "new": 260000,
+          "mnp": 210000,
+          "change": 100000
+        },
+        "90": {
+          "new": 260000,
+          "mnp": 210000,
+          "change": 100000
+        },
+        "61": {
+          "new": 260000,
+          "mnp": 210000,
+          "change": 100000
+        },
+        "37": {
+          "new": 90000,
+          "mnp": 90000,
+          "change": 0
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "samsung",
+      "name": "갤럭시A36",
+      "model_code": "SM-A366NK",
+      "amounts": {
+        "110": {
+          "new": 260000,
+          "mnp": 220000,
+          "change": 160000
+        },
+        "90": {
+          "new": 260000,
+          "mnp": 220000,
+          "change": 160000
+        },
+        "61": {
+          "new": 260000,
+          "mnp": 220000,
+          "change": 160000
+        },
+        "37": {
+          "new": 150000,
+          "mnp": 150000,
+          "change": 60000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "갤A35",
+      "model_code": "SM-A356NK",
+      "amounts": {
+        "110": {
+          "new": 160000,
+          "mnp": 90000,
+          "change": 30000
+        },
+        "90": {
+          "new": 160000,
+          "mnp": 90000,
+          "change": 30000
+        },
+        "61": {
+          "new": 160000,
+          "mnp": 90000,
+          "change": 30000
+        },
+        "37": {
+          "new": 90000,
+          "mnp": 90000,
+          "change": 0
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "맘편안폰S",
+      "model_code": "SM-M366NK-MOM",
+      "amounts": {
+        "110": {
+          "new": 260000,
+          "mnp": 220000,
+          "change": 160000
+        },
+        "90": {
+          "new": 260000,
+          "mnp": 220000,
+          "change": 160000
+        },
+        "61": {
+          "new": 260000,
+          "mnp": 220000,
+          "change": 160000
+        },
+        "37": {
+          "new": 150000,
+          "mnp": 150000,
+          "change": 60000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "갤Jump4",
+      "model_code": "SM-M366K",
+      "amounts": {
+        "110": {
+          "new": 260000,
+          "mnp": 220000,
+          "change": 160000
+        },
+        "90": {
+          "new": 260000,
+          "mnp": 220000,
+          "change": 160000
+        },
+        "61": {
+          "new": 260000,
+          "mnp": 220000,
+          "change": 160000
+        },
+        "37": {
+          "new": 150000,
+          "mnp": 150000,
+          "change": 60000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "갤Jump3",
+      "model_code": "SM-M446K",
+      "amounts": {
+        "110": {
+          "new": 260000,
+          "mnp": 260000,
+          "change": 200000
+        },
+        "90": {
+          "new": 260000,
+          "mnp": 260000,
+          "change": 200000
+        },
+        "61": {
+          "new": 260000,
+          "mnp": 260000,
+          "change": 200000
+        },
+        "37": {
+          "new": 130000,
+          "mnp": 130000,
+          "change": 40000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "모토로라 엣지70",
+      "model_code": "XT2601-2K",
+      "amounts": {
+        "110": {
+          "new": 150000,
+          "mnp": 150000,
+          "change": 50000
+        },
+        "90": {
+          "new": 150000,
+          "mnp": 150000,
+          "change": 50000
+        },
+        "61": {
+          "new": 150000,
+          "mnp": 150000,
+          "change": 50000
+        },
+        "37": {
+          "new": 150000,
+          "mnp": 150000,
+          "change": 50000
+        }
+      }
+    },
+    {
+      "network": "5g",
+      "brand": "other",
+      "name": "모토로라 엣지50 퓨전",
+      "model_code": "XT2429-2K",
+      "amounts": {
+        "110": {
+          "new": 150000,
+          "mnp": 150000,
+          "change": 50000
+        },
+        "90": {
+          "new": 150000,
+          "mnp": 150000,
+          "change": 50000
+        },
+        "61": {
+          "new": 150000,
+          "mnp": 150000,
+          "change": 50000
+        },
+        "37": {
+          "new": 150000,
+          "mnp": 150000,
+          "change": 50000
+        }
+      }
+    },
+    {
+      "network": "lte",
+      "brand": "other",
+      "name": "폼폼푸린 키즈폰",
+      "model_code": "SM-A175NK-KP",
+      "amounts": {
+        "110": {
+          "new": 260000,
+          "mnp": 200000,
+          "change": 140000
+        },
+        "90": {
+          "new": 260000,
+          "mnp": 200000,
+          "change": 140000
+        },
+        "61": {
+          "new": 260000,
+          "mnp": 200000,
+          "change": 140000
+        },
+        "37": {
+          "new": 260000,
+          "mnp": 200000,
+          "change": 140000
+        }
+      }
+    },
+    {
+      "network": "lte",
+      "brand": "other",
+      "name": "포차코키즈폰",
+      "model_code": "SM-A165NK-KP",
+      "amounts": {
+        "110": {
+          "new": 90000,
+          "mnp": 20000,
+          "change": 20000
+        },
+        "90": {
+          "new": 90000,
+          "mnp": 20000,
+          "change": 20000
+        },
+        "61": {
+          "new": 90000,
+          "mnp": 20000,
+          "change": 20000
+        },
+        "37": {
+          "new": 90000,
+          "mnp": 20000,
+          "change": 20000
+        }
+      }
+    },
+    {
+      "network": "lte",
+      "brand": "samsung",
+      "name": "갤럭시A17",
+      "model_code": "SM-A175NK(O)",
+      "amounts": {
+        "110": {
+          "new": 230000,
+          "mnp": 170000,
+          "change": 110000
+        },
+        "90": {
+          "new": 230000,
+          "mnp": 170000,
+          "change": 110000
+        },
+        "61": {
+          "new": 230000,
+          "mnp": 170000,
+          "change": 110000
+        },
+        "37": {
+          "new": 230000,
+          "mnp": 170000,
+          "change": 110000
+        }
+      }
+    },
+    {
+      "network": "lte",
+      "brand": "other",
+      "name": "갤A16",
+      "model_code": "SM-A165NK",
+      "amounts": {
+        "110": {
+          "new": 230000,
+          "mnp": 220000,
+          "change": 170000
+        },
+        "90": {
+          "new": 230000,
+          "mnp": 220000,
+          "change": 170000
+        },
+        "61": {
+          "new": 230000,
+          "mnp": 220000,
+          "change": 170000
+        },
+        "37": {
+          "new": 230000,
+          "mnp": 220000,
+          "change": 170000
+        }
+      }
+    },
+    {
+      "network": "lte",
+      "brand": "other",
+      "name": "시나모롤키즈폰",
+      "model_code": "AT-M130K",
+      "amounts": {
+        "110": {
+          "new": 260000,
+          "mnp": 260000,
+          "change": 100000
+        },
+        "90": {
+          "new": 260000,
+          "mnp": 260000,
+          "change": 100000
+        },
+        "61": {
+          "new": 260000,
+          "mnp": 260000,
+          "change": 100000
+        },
+        "37": {
+          "new": 260000,
+          "mnp": 260000,
+          "change": 100000
+        }
+      }
+    },
+    {
+      "network": "lte",
+      "brand": "other",
+      "name": "ZTE클래식폴더",
+      "model_code": "Z2339K",
+      "amounts": {
+        "110": {
+          "new": 230000,
+          "mnp": 100000,
+          "change": 40000
+        },
+        "90": {
+          "new": 230000,
+          "mnp": 100000,
+          "change": 40000
+        },
+        "61": {
+          "new": 230000,
+          "mnp": 100000,
+          "change": 40000
+        },
+        "37": {
+          "new": 230000,
+          "mnp": 100000,
+          "change": 40000
+        }
+      }
+    }
+  ]
+}
