@@ -204,22 +204,23 @@ buildGroups();
 
 init();
 
-// ===== Policy Tab Switch (non-invasive) =====
-document.addEventListener('DOMContentLoaded', () => {
-  const wiredBtn = document.getElementById('btn-wired');
-  const wirelessBtn = document.getElementById('btn-wireless');
-  const wirelessSection = document.getElementById('wireless-section');
+// === Policy tab toggle (safe add) ===
+document.addEventListener('DOMContentLoaded', function(){
+  const btnW = document.getElementById('btn-wired');
+  const btnWL = document.getElementById('btn-wireless');
+  const wireless = document.getElementById('wireless-section');
 
-  if(wiredBtn && wirelessBtn){
-    wiredBtn.addEventListener('click', ()=>{
-      wiredBtn.classList.add('active');
-      wirelessBtn.classList.remove('active');
-      if(wirelessSection) wirelessSection.style.display='none';
-    });
-    wirelessBtn.addEventListener('click', ()=>{
-      wirelessBtn.classList.add('active');
-      wiredBtn.classList.remove('active');
-      if(wirelessSection) wirelessSection.style.display='block';
-    });
-  }
+  if(!btnW || !btnWL || !wireless) return;
+
+  btnW.onclick = function(){
+    btnW.classList.add('active');
+    btnWL.classList.remove('active');
+    wireless.style.display = 'none';
+  };
+
+  btnWL.onclick = function(){
+    btnWL.classList.add('active');
+    btnW.classList.remove('active');
+    wireless.style.display = 'block';
+  };
 });
