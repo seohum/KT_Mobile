@@ -288,3 +288,16 @@ function refreshWireless(){
   }
   $("wirelessPolicyAmt").textContent = money(amt);
 }
+
+// ===== POLICY TAB HANDLER =====
+function switchPolicy(type){
+  policyType = type;
+  document.getElementById('wired-section').style.display = type==='wired'?'block':'none';
+  document.getElementById('wireless-section').style.display = type==='wireless'?'block':'none';
+}
+document.addEventListener('DOMContentLoaded', ()=>{
+  const wiredBtn = document.getElementById('btn-wired');
+  const wirelessBtn = document.getElementById('btn-wireless');
+  if(wiredBtn) wiredBtn.addEventListener('click', ()=>switchPolicy('wired'));
+  if(wirelessBtn) wirelessBtn.addEventListener('click', ()=>switchPolicy('wireless'));
+});
